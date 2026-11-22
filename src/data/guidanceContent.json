@@ -1,0 +1,2008 @@
+{
+  "dashboard": {
+    "id": "dashboard",
+    "title": {
+      "en": "Operations Center & Daily Briefing",
+      "ar": "مركز العمليات والإحاطة اليومية"
+    },
+    "subtitle": {
+      "en": "Executive morning overview of departures, pending inquiries, and critical SLAs",
+      "ar": "نظرة الصباح التنفيذية للمغادرات، الطلبات المعلقة ومؤشرات الأداء الحرجة"
+    },
+    "badge": {
+      "en": "Mission Control",
+      "ar": "لوحة القيادة"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Serves as the central command cockpit for the entire agency. Aggregates live operational departures, pending traveler requests, quote conversion rates, and urgent alerts across all sales and operations desks.",
+      "ar": "المقر المركزي لإدارة الوكالة وسير العمليات. يُجمع في شاشة واحدة رحلات اليوم المغادرة، واستفسارات المسافرين العاجلة، ونسب إغلاق المبيعات، مع تنبيهات لحظية للمهام ذات الأولوية القصوى.",
+      "keyDeliverables": {
+        "en": [
+          "Immediate triage of inquiries nearing SLA response limits (within 2 hours)",
+          "High-level status of active traveler groups currently in destination",
+          "Fast 1-click jumps into quoting, active departures, or client intake forms"
+        ],
+        "ar": [
+          "الفرز الفوري للاستفسارات المقتربة من مهلة الرد المحددة (خلال ساعتين)",
+          "متابعة حالة الأفواج والمسافرين الموجودين في الوجهات حالياً",
+          "الانتقال السريع بنقرة واحدة لإنشاء عروض الأسعار، إدارة المغادرات، أو نماذج استقبال العملاء"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "The Operations Center populates automatically as your team enters records across Sales and Operations.",
+      "ar": "تتحدث لوحة التحكم تلقائياً بمجرد إدخال فريقك للبيانات في أقسام المبيعات والعمليات.",
+      "summaryEn": "The Operations Center populates automatically as your team enters records across Sales and Operations.",
+      "summaryAr": "تتحدث لوحة التحكم تلقائياً بمجرد إدخال فريقك للبيانات في أقسام المبيعات والعمليات.",
+      "checklist": [
+        {
+          "id": "agency_profile",
+          "en": "Agency Profile and currency settings configured in Workspace",
+          "ar": "تهيئة ملف الوكالة وإعدادات العملة في إعدادات المنظومة",
+          "required": true
+        },
+        {
+          "id": "initial_leads",
+          "en": "At least one active customer inquiry or confirmed booking registered",
+          "ar": "تسجيل استفسار عميل واحد على الأقل أو حجز مؤكد لإظهار الإحصائيات الحية",
+          "required": false
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "From here, handle urgent communications or proceed to generate quotes for pending travelers:",
+      "ar": "من هنا، تعامل مع التنبيهات العاجلة أولاً ثم باشر تسعير استفسارات العملاء الجديدة:",
+      "summaryEn": "From here, handle urgent communications or proceed to generate quotes for pending travelers:",
+      "summaryAr": "من هنا، تعامل مع التنبيهات العاجلة أولاً ثم باشر تسعير استفسارات العملاء الجديدة:",
+      "links": [
+        {
+          "targetTab": "inbox",
+          "labelEn": "Review Unassigned Inquiries",
+          "labelAr": "فرز طلبات العملاء الواردة",
+          "hintEn": "Triage WhatsApp & web form requests",
+          "hintAr": "الرد على رسائل الواتساب واستمارات الموقع"
+        },
+        {
+          "targetTab": "quotes",
+          "labelEn": "Create New Quotation",
+          "labelAr": "بناء عرض سعر جديد",
+          "hintEn": "Generate tailored itinerary proposal",
+          "hintAr": "توليد برنامج سياحي مخصص بهوامش أرباح"
+        },
+        {
+          "targetTab": "trips",
+          "labelEn": "Monitor Active Trips",
+          "labelAr": "متابعة الرحلات الحالية",
+          "hintEn": "Check flight arrivals & rooming dispatches",
+          "hintAr": "التأكد من استقبال المطار وتسكين الفنادق"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Start every morning by reviewing red SLA badges on pending inquiries before opening new quotes.",
+        "Use the quick simulation button to test how a high-volume peak season affects your dashboard widgets."
+      ],
+      "ar": [
+        "ابدأ يومك دائماً بمراجعة شارات الوقت الحمراء للاستفسارات قبل الشروع في عروض الأسعار.",
+        "استعن بزر المحاكاة لاختبار كيفية استجابة اللوحة للضغط في مواسم الذروة السياحية."
+      ]
+    }
+  },
+
+  "sales": {
+    "id": "sales",
+    "title": {
+      "en": "Sales & Quotations Hub",
+      "ar": "إدارة المبيعات والتعاقدات السياحية"
+    },
+    "subtitle": {
+      "en": "End-to-end commercial funnel from raw traveler inquiry to margin-guaranteed proposal",
+      "ar": "المسار التجاري الكامل من استلام رغبة العميل وحتى العرض المالي المعتمد"
+    },
+    "badge": {
+      "en": "Commercial Engine",
+      "ar": "محرك المبيعات"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Acts as the commercial growth engine of your travel agency. Triages inbound demand from WhatsApp and web forms, computes precise multi-currency cost breakdowns with guaranteed profit margins, and manages deal progression.",
+      "ar": "المحرك التجاري والمالي للشركة السياحية. يُنظم استقبال طلبات العملاء من واتساب واستمارات الموقع، ويحسب التكاليف الصافية وهوامش الأرباح، ويتابع مراحل إغلاق الصفقات.",
+      "keyDeliverables": {
+        "en": [
+          "Unified WhatsApp & email inquiry parsing with instant traveler qualification",
+          "Day-by-day dynamic itinerary and cost calculator with automated margin guards",
+          "Interactive digital client proposals and luxury branded A4 PDF exports",
+          "Visual deal Kanban pipeline tracking status from Proposal Sent to Deposit Confirmed"
+        ],
+        "ar": [
+          "فرز آلي لرسائل واتساب ونماذج الموقع مع استخراج تواريخ السفر والأعداد تلقائياً",
+          "بناء برامج سياحية يومية متكاملة مع حماية هوامش الربح من الأخطاء الحسابية",
+          "توليد روابط تفاعلية للعروض وعروض أسعار PDF موثقة بشعار وهوية شركتك",
+          "لوحة كانبان بصرية لمتابعة قرار العميل حتى تحصيل العربون وتأكيد الحجز"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Before building proposals, verify target profit margins and maintain active supplier tariffs in the library.",
+      "ar": "قبل بناء عروض الأسعار، حدد هامش الربح المستهدف وتأكد من تحديث أسعار الفنادق في مكتبة التعريفات.",
+      "summaryEn": "Before building proposals, verify target profit margins and maintain active supplier tariffs in the library.",
+      "summaryAr": "قبل بناء عروض الأسعار، حدد هامش الربح المستهدف وتأكد من تحديث أسعار الفنادق في مكتبة التعريفات.",
+      "checklist": [
+        {
+          "id": "inbound_brief",
+          "en": "Clear traveler specifications: dates, destination, adult/child breakdown, and budget",
+          "ar": "استيفاء رغبات المسافر: التواريخ التقريبية، الوجهة، توزيع المسافرين، والميزانية",
+          "required": true
+        },
+        {
+          "id": "contract_tariffs",
+          "en": "Contracted supplier hotel room tariffs or realistic net cost estimates",
+          "ar": "معرفة أسعار التكلفة الصافية من الفنادق أو شركات النقل السياحي",
+          "required": true
+        },
+        {
+          "id": "target_margin",
+          "en": "Established agency gross margin threshold (typically 12% to 25%)",
+          "ar": "تحديد الحد الأدنى لهامش ربح الشركة (عادة بين 12% و 25%)",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Follow the natural progression through the Sales stages:",
+      "ar": "اتبع التسلسل المنطقي لمراحل دورة المبيعات:",
+      "summaryEn": "Follow the natural progression through the Sales stages:",
+      "summaryAr": "اتبع التسلسل المنطقي لمراحل دورة المبيعات:",
+      "links": [
+        {
+          "targetTab": "inbox",
+          "labelEn": "Inquiry Inbox",
+          "labelAr": "صندوق الطلبات الواردة",
+          "hintEn": "Triage and qualify new leads",
+          "hintAr": "استقبال وتأهيل العملاء المحتملين الجدد"
+        },
+        {
+          "targetTab": "quotes",
+          "labelEn": "Quote Builder",
+          "labelAr": "مصمم عروض الأسعار",
+          "hintEn": "Assemble services and generate proposal",
+          "hintAr": "تسعير الخدمات وإصدار وثيقة العرض"
+        },
+        {
+          "targetTab": "pipeline",
+          "labelEn": "Sales Pipeline",
+          "labelAr": "مسار الصفقات (كانبان)",
+          "hintEn": "Track negotiations and deposit receipts",
+          "hintAr": "متابعة مراحل موافقة العميل واستلام الدفعة الأولى"
+        },
+        {
+          "targetTab": "trips",
+          "labelEn": "Trip Operations",
+          "labelAr": "تسليم الملف للتشغيل الميداني",
+          "hintEn": "Handoff confirmed deal to dispatch desk",
+          "hintAr": "تحويل الحجز المؤكد إلى ملف رحلة تشغيلي"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Inquiries responded to within 15 minutes achieve 3x higher conversion rates.",
+        "Always present travelers with two hotel tiers (Standard vs Luxury) to accelerate decision making."
+      ],
+      "ar": [
+        "الرد على العميل خلال أول 15 دقيقة يرفع احتمالية إتمام الحجز بمقدار 3 أضعاف.",
+        "قدم دائماً خيارين للفنادق (مستوى قياسي مقابل فاخر) لمساعدة العميل على حسم قراره سريعاً."
+      ]
+    }
+  },
+
+  "sales_inbox": {
+    "id": "sales_inbox",
+    "title": {
+      "en": "Inquiry Inbox & Lead Qualification",
+      "ar": "صندوق الاستفسارات وتأهيل العملاء"
+    },
+    "subtitle": {
+      "en": "Capture, parse, and qualify leads from WhatsApp, email, and website portals",
+      "ar": "استقبال وفرز طلبات العملاء من واتساب والبريد واستمارات الموقع"
+    },
+    "badge": {
+      "en": "Top of Funnel",
+      "ar": "المرحلة الأولى"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "The entry gateway for all traveler demand. Every quote and trip file starts here. Allows sales coordinators to capture passenger requirements, budget limits, travel dates, and special notes before investing time in building itineraries.",
+      "ar": "البوابة الأولى لاستقبال أي طلب سفر. لا تبدأ أي رحلة أو عرض سعر إلا من هنا. يُمكن موظفي المبيعات من تدوين رغبات المسافرين وميزانياتهم ومواعيد السفر بدقة لتجنب إعادة العمل لاحقاً.",
+      "keyDeliverables": {
+        "en": [
+          "Unified inbox for WhatsApp messages, web inquiry forms, and phone walk-ins",
+          "Automatic passenger count parsing (Adults, Children, Room sharing)",
+          "1-Click promotion from qualified Inquiry directly into Quote Builder"
+        ],
+        "ar": [
+          "صندوق موحد لرسائل واتساب ونماذج الموقع والاتصالات الهاتفية المباشرة",
+          "تحديد تلقائي لتوزيع المسافرين (بالغين، أطفال، ونوع الغرف المطلوبة)",
+          "تحويل الطلب المؤهل بنقرة واحدة مباشرة إلى حاسبة ومصمم عروض الأسعار"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Ensure your base operational rates or suppliers are listed so you can give realistic estimates during client chats.",
+      "ar": "تأكد من معرفة أسعار الفنادق والخدمات أو وجودها في مكتبة الأسعار لإعطاء إجابات أولية واقعية للعميل.",
+      "summaryEn": "Ensure your base operational rates or suppliers are listed so you can give realistic estimates during client chats.",
+      "summaryAr": "تأكد من معرفة أسعار الفنادق والخدمات أو وجودها في مكتبة الأسعار لإعطاء إجابات أولية واقعية للعميل.",
+      "checklist": [
+        {
+          "id": "contact_info",
+          "en": "Verify traveler phone / WhatsApp number for prompt follow-up",
+          "ar": "التأكد من صحة رقم الهاتف والواتساب للمسافر للمتابعة السريعة",
+          "required": true
+        },
+        {
+          "id": "travel_window",
+          "en": "Confirm target travel dates or month and duration",
+          "ar": "تأكيد مواعيد السفر التقريبية أو الشهر المستهدف وعدد الليالي",
+          "required": true
+        },
+        {
+          "id": "pax_breakdown",
+          "en": "Note number of travelers (Adults, Children, Infants)",
+          "ar": "تحديد عدد المسافرين بالتفصيل (كبار، أطفال، رضع)",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Once the inquiry has verified dates and passenger count, proceed immediately to build a tailored proposal:",
+      "ar": "بمجرد استيفاء تفاصيل المسافر ومواعيده، انقل الطلب فوراً لمصمم العروض:",
+      "summaryEn": "Once the inquiry has verified dates and passenger count, proceed immediately to build a tailored proposal:",
+      "summaryAr": "بمجرد استيفاء تفاصيل المسافر ومواعيده، انقل الطلب فوراً لمصمم العروض:",
+      "links": [
+        {
+          "targetTab": "quotes",
+          "labelEn": "Convert to Live Quote",
+          "labelAr": "تحويل إلى عرض سعر رسمي",
+          "hintEn": "Pre-fills traveler names, dates, and budget",
+          "hintAr": "ينقل بيانات العميل والتواريخ تلقائياً لحساب التكلفة"
+        },
+        {
+          "targetTab": "rates",
+          "labelEn": "Check Supplier Tariffs",
+          "labelAr": "فحص أسعار الموردين",
+          "hintEn": "Verify seasonal hotel and transfer costs",
+          "hintAr": "التأكد من أسعار الفنادق والسيارات للموسم المطلوب"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Inquiries responded to within 15 minutes convert 3x higher than those answered after 2 hours.",
+        "Use the WhatsApp AI parser to paste conversational chat text and extract travel dates automatically."
+      ],
+      "ar": [
+        "الرد على العميل خلال أول 15 دقيقة يضاعف فرص إغلاق الحجز بمقدار 3 أضعاف مقارنة بالرد المتأخر.",
+        "استخدم أداة تفريغ محادثات واتساب لاستخراج التواريخ والأعداد من الرسائل تلقائياً."
+      ]
+    }
+  },
+
+  "sales_quotes": {
+    "id": "sales_quotes",
+    "title": {
+      "en": "Quote Builder & Cost Engineering",
+      "ar": "مصمم عروض الأسعار وهندسة التكاليف"
+    },
+    "subtitle": {
+      "en": "Assemble day-by-day itineraries, apply hotel tariffs, and calculate guaranteed margins",
+      "ar": "تجميع البرامج اليومية، تسعير الفنادق، وحساب هوامش الأرباح الآمنة"
+    },
+    "badge": {
+      "en": "Pricing Engine",
+      "ar": "محرك التسعير"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "The core commercial engine of RIHAL. Here you architect client travel programs by chaining hotels, transport transfers, domestic flights, tours, and visa fees with automatic tax and profit margin safeguards.",
+      "ar": "المحرك التجاري الأساسي للمنظومة. هنا تُصمم البرامج السياحية عبر ربط الفنادق والتنقلات والجولات وتأشيرات الدخول مع حساب فوري للضرائب وهوامش الربح دون أخطاء حسابية.",
+      "keyDeliverables": {
+        "en": [
+          "Multi-currency pricing (USD, EUR, SAR, EGP) with live currency conversion",
+          "Margin protection warnings when net cost exceeds intended markup thresholds",
+          "Exporting branded luxury PDF proposals and shareable digital interactive links"
+        ],
+        "ar": [
+          "تسعير متعدد العملات (دولار، يورو، ريال، جنيه) مع تحويل فوري لأسعار الصرف",
+          "حماية الأرباح من خلال تنبيهات تلقائية عند انخفاض هامش الربح عن النسبة المستهدفة",
+          "توليد عروض أسعار تفاعلية فاخرة وروابط رقمية مباشرة للمسافر مع إمكانية تصدير PDF"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Before building a quote, you should have customer specifications from an Inquiry or direct client brief:",
+      "ar": "قبل بناء عرض السعر، يجب معرفة تفاصيل الطلب وتوافر الأسعار الأساسية للخدمات:",
+      "summaryEn": "Before building a quote, you should have customer specifications from an Inquiry or direct client brief:",
+      "summaryAr": "قبل بناء عرض السعر، يجب معرفة تفاصيل الطلب وتوافر الأسعار الأساسية للخدمات:",
+      "checklist": [
+        {
+          "id": "qual_inquiry",
+          "en": "Customer contact and travel window defined (from Inbox or direct)",
+          "ar": "وجود بيانات الاتصال وتواريخ السفر (من صندوق الاستفسارات أو مباشرة)",
+          "required": true
+        },
+        {
+          "id": "supplier_rates",
+          "en": "Supplier net contract rates or realistic market estimates available",
+          "ar": "معرفة أسعار التكلفة الصافية من الفنادق أو مكتبة الأسعار",
+          "required": true
+        },
+        {
+          "id": "margin_target",
+          "en": "Target agency profit margin established (typically 12% - 25%)",
+          "ar": "تحديد النسبة المئوية لهامش ربح الشركة المستهدف (غالباً 12% - 25%)",
+          "required": true
+        }
+      ],
+      "recommendedPriorTab": {
+        "tab": "inbox",
+        "labelEn": "Inquiry Inbox",
+        "labelAr": "صندوق الاستفسارات"
+      }
+    },
+    "nextSteps": {
+      "en": "After saving and sending the quote to the traveler:",
+      "ar": "بعد حفظ العرض وإرساله للعميل عبر الرابط أو الواتساب:",
+      "summaryEn": "After saving and sending the quote to the traveler:",
+      "summaryAr": "بعد حفظ العرض وإرساله للعميل عبر الرابط أو الواتساب:",
+      "links": [
+        {
+          "targetTab": "pipeline",
+          "labelEn": "Track Deal in Pipeline",
+          "labelAr": "متابعة الصفقة في مسار المبيعات",
+          "hintEn": "Monitor client review & negotiation stages",
+          "hintAr": "متابعة تفاعل العميل حتى استلام الدفعة المقدمة"
+        },
+        {
+          "targetTab": "trips",
+          "labelEn": "Confirm Directly to Trip File",
+          "labelAr": "تأكيد الحجز ونقله لملفات التشغيل",
+          "hintEn": "When traveler accepts & pays deposit",
+          "hintAr": "عند موافقة العميل ودفع العربون لتحويله لرحلة فعلية"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Always provide two hotel tier options (Standard vs Luxury) to double conversion rates.",
+        "Check the supplier cancellation deadline before guaranteeing prices longer than 72 hours."
+      ],
+      "ar": [
+        "قدم دائماً خيارين للفنادق (مستوى قياسي مقابل فاخر) لرفع احتمالية القبول للضعف.",
+        "راجع دائماً شروط إلغاء الموردين قبل تحديد مدة صلاحية العرض لأكثر من 72 ساعة."
+      ]
+    }
+  },
+
+  "sales_pipeline": {
+    "id": "sales_pipeline",
+    "title": {
+      "en": "Sales Pipeline & Deal Flow",
+      "ar": "مسار المبيعات وإغلاق الصفقات"
+    },
+    "subtitle": {
+      "en": "Visual Kanban board tracking quotes from proposal sent through deposit collection",
+      "ar": "لوحة كانبان بصرية لمتابعة الصفقات من إرسال العرض حتى تحصيل العربون"
+    },
+    "badge": {
+      "en": "Deal Flow",
+      "ar": "إدارة الصفقات"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Tracks the financial velocity of your agency. Moves quotes across stages (New Lead -> Proposal Sent -> Under Review -> Won/Deposit Paid -> Lost) with clear visibility into total pipeline value and overdue negotiations.",
+      "ar": "يقيس نبض الإيرادات في شركتك. يُحرك عروض الأسعار بين المراحل (طلب جديد ➔ تم الإرسال ➔ قيد المراجعة ➔ تم التعاقد ودفع العربون) مع كشف شامل لقيمة الصفقات المعلقة.",
+      "keyDeliverables": {
+        "en": [
+          "Drag-and-drop status transitions with automated timestamp logging",
+          "Instant revenue forecasting based on win probabilities per stage",
+          "One-click confirmation converting Won quotes into operational Trip files"
+        ],
+        "ar": [
+          "سحب وإفلات لتحديث حالة العروض مع تسجيل تاريخ التغيير تلقائياً",
+          "توقع دقيق لإجمالي الإيرادات المتوقعة بناءً على نسب إغلاق كل مرحلة",
+          "تحويل العروض الرابحة (Won) بضغطة زر إلى ملف رحلة تشغيلي في قسم العمليات"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "The pipeline functions after you have generated at least one quote or proposal:",
+      "ar": "يعمل مسار المبيعات بمجرد إنشاء عرض سعر واحد على الأقل:",
+      "summaryEn": "The pipeline functions after you have generated at least one quote or proposal:",
+      "summaryAr": "يعمل مسار المبيعات بمجرد إنشاء عرض سعر واحد على الأقل:",
+      "checklist": [
+        {
+          "id": "active_quotes",
+          "en": "At least one active Quote created in Quote Builder",
+          "ar": "وجود عرض سعر واحد على الأقل تم إنشاؤه في مصمم العروض",
+          "required": true
+        },
+        {
+          "id": "deposit_policy",
+          "en": "Clarified agency deposit requirements (e.g. 30% upfront)",
+          "ar": "معرفة شروط العربون المطلوب لتأكيد الحجز (مثلاً 30% دفعة أولى)",
+          "required": true
+        }
+      ],
+      "recommendedPriorTab": {
+        "tab": "quotes",
+        "labelEn": "Quote Builder",
+        "labelAr": "مصمم العروض"
+      }
+    },
+    "nextSteps": {
+      "en": "When a customer approves the proposal and remits deposit:",
+      "ar": "بمجرد موافقة العميل وسداد الدفعة المقدمة:",
+      "summaryEn": "When a customer approves the proposal and remits deposit:",
+      "summaryAr": "بمجرد موافقة العميل وسداد الدفعة المقدمة:",
+      "links": [
+        {
+          "targetTab": "trips",
+          "labelEn": "Handoff to Operations (Trip Files)",
+          "labelAr": "تسليم الملف لفريق العمليات والتشغيل",
+          "hintEn": "Generate passenger rooming & vouchers",
+          "hintAr": "بدء تسكين الفنادق وإصدار أوامر التوريد وقسائم الحجز"
+        },
+        {
+          "targetTab": "followups",
+          "labelEn": "Schedule Follow-Up Task",
+          "labelAr": "جدولة متابعة لاحقة",
+          "hintEn": "Set reminder for remaining balance collection",
+          "hintAr": "تذكير بموعد تحصيل باقي مستحقات الرحلة"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Deals left in 'Under Review' for more than 4 days without follow-up have an 80% abandonment rate.",
+        "Filter the pipeline by assigned coordinator to run weekly sales team performance reviews."
+      ],
+      "ar": [
+        "الصفقات التي تبقى معلقة دون تواصل لأكثر من 4 أيام تنخفض فرصة إغلاقها بنسبة 80%.",
+        "استخدم التصفية حسب اسم مسؤول المبيعات لمراجعة أداء الفريق في الاجتماع الأسبوعي."
+      ]
+    }
+  },
+
+  "trips": {
+    "id": "trips",
+    "title": {
+      "en": "Trip Operations & Group Dispatch",
+      "ar": "تشغيل الرحلات وإدارة الأفواج الميدانية"
+    },
+    "subtitle": {
+      "en": "Live execution cockpit for confirmed bookings, rooming lists, chauffeur fleet, and vouchers",
+      "ar": "غرفة العمليات المركزية للرحلات المؤكدة، قوائم التسكين، حركة السيارات، وقسائم الموردين"
+    },
+    "badge": {
+      "en": "Execution Desk",
+      "ar": "غرفة العمليات"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Where commercial bookings turn into flawless travel experiences. Coordinates flight arrivals, hotel check-ins, licensed guide assignments, vehicle movements, and supplier voucher dispatches for travelers on the ground.",
+      "ar": "المرحلة التي تتحول فيها الحجوزات إلى تجربة سفر سلسة واستثنائية. إدارة وصول الطيران، تسليم الغرف، تكليف المرشدين والسائقين، وإصدار أوامر التوريد وقسائم الخدمات الرسمية.",
+      "keyDeliverables": {
+        "en": [
+          "Master operations board of active, arriving, and departing tour groups",
+          "Automated passenger manifest and hotel rooming CSV export",
+          "Driver transfer sheets, bus plate scheduling, and flight tracking",
+          "Direct dispatch of official supplier vouchers and traveler digital itinerary passcodes"
+        ],
+        "ar": [
+          "لوحة تشغيل مركزية للأفواج الحالية والقادمة والمغادرة حسب التاريخ والوجهة",
+          "توليد قوائم ركاب تفصيلية وكشوفات توزيع الغرف بالفنادق بصيغة CSV و PDF",
+          "جدولة حركة السائقين وأرقام اللوحات ومواعيد استقبال صالات المطار",
+          "إصدار فوري لقسائم الخدمات الرسمية للموردين ورموز المرور الرقمية للمسافرين"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "A trip file should originate from an accepted Quote or confirmed booking with deposit paid.",
+      "ar": "يجب أن يبدأ ملف الرحلة من عرض سعر معتمد مع سداد الدفعة المقدمة واستلام بيانات الجوازات.",
+      "summaryEn": "A trip file should originate from an accepted Quote or confirmed booking with deposit paid.",
+      "summaryAr": "يجب أن يبدأ ملف الرحلة من عرض سعر معتمد مع سداد الدفعة المقدمة واستلام بيانات الجوازات.",
+      "checklist": [
+        {
+          "id": "deposit_confirmed",
+          "en": "Customer confirmation and upfront deposit payment verified",
+          "ar": "تأكيد موافقة العميل وإيصال سداد الدفعة المقدمة",
+          "required": true
+        },
+        {
+          "id": "passport_details",
+          "en": "Full passenger legal names matching passports, rooming pairs, and special requests",
+          "ar": "الأسماء المطابقة لوثائق السفر، وتوزيع النزلاء على الغرف، والطلبات الخاصة",
+          "required": true
+        },
+        {
+          "id": "supplier_booking_refs",
+          "en": "Hotel confirmation numbers and transportation supplier reservations",
+          "ar": "أرقام تأكيد حجوزات الفنادق وأمر تكليف شركة النقل السياحي المعتمدة",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Complete operational readiness across specialized sub-sections:",
+      "ar": "استكمل بنود الجاهزية التشغيلية عبر الأدوات التالية:",
+      "summaryEn": "Complete operational readiness across specialized sub-sections:",
+      "summaryAr": "استكمل بنود الجاهزية التشغيلية عبر الأدوات التالية:",
+      "links": [
+        {
+          "targetTab": "trips_rooming",
+          "labelEn": "Hotel Rooming Lists",
+          "labelAr": "تسكين الفنادق وتوزيع الغرف",
+          "hintEn": "Assign double, triple, and quad rooms",
+          "hintAr": "توزيع المسافرين على الفنادق وأنواع الغرف"
+        },
+        {
+          "targetTab": "trips_fleet",
+          "labelEn": "Fleet & Transportation",
+          "labelAr": "أسطول الحافلات والنقل",
+          "hintEn": "Assign drivers, plate numbers, and airport transfers",
+          "hintAr": "توجيه السائقين وجدولة رحلات الاستقبال والتوديع"
+        },
+        {
+          "targetTab": "trips_vouchers",
+          "labelEn": "Vouchers Dispatch",
+          "labelAr": "إصدار قسائم الخدمات",
+          "hintEn": "Generate official vouchers with supplier confirmation codes",
+          "hintAr": "طباعة أوامر التوريد وإرسالها للفنادق والشركاء"
+        },
+        {
+          "targetTab": "passcodes",
+          "labelEn": "Traveler Mobile Portal",
+          "labelAr": "بوابة المسافر الذكية",
+          "hintEn": "Share live digital trip QR passcode with client",
+          "hintAr": "مشاركة رمز الاستجابة السريعة للبرنامج مع المسافر"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Reconfirm flight arrival numbers and driver meet-and-assist times 24 hours prior to landing.",
+        "Print the A4 operational master pack before dispatching guides to remote excursion areas."
+      ],
+      "ar": [
+        "أعد تأكيد رقم رحلة الطيران وموعد الاستقبال مع السائق قبل موعد الوصول بـ 24 ساعة.",
+        "اطبع الملف الورقي التشغيلي المجمع قبل تحرك المرشد الميداني في المناطق النائية."
+      ]
+    }
+  },
+
+  "trips_workspace": {
+    "id": "trips_workspace",
+    "title": {
+      "en": "Trip Operations & Group Dispatch",
+      "ar": "إدارة تشغيل الرحلات والأفواج"
+    },
+    "subtitle": {
+      "en": "Live execution cockpit for confirmed bookings, rooming lists, guide assignments, and vouchers",
+      "ar": "غرفة العمليات المركزية للرحلات المؤكدة، قوائم التسكين، المرشدين، وقسائم الخدمات"
+    },
+    "badge": {
+      "en": "Execution Desk",
+      "ar": "غرفة العمليات"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Where promises made during sales are executed in reality. Coordinates flight arrivals, hotel check-ins, transport manifests, tour guide assignments, and emergency traveler support for confirmed travelers.",
+      "ar": "المرحلة التي تتحول فيها وعود المبيعات إلى تجربة واقعية فاخرة. إدارة وصول الطيران، تسليم الغرف بالفنادق، توجيه السائقين، تكليف المرشدين، والتدخل السريع في حالات الطوارئ.",
+      "keyDeliverables": {
+        "en": [
+          "Master operations board showing active, arriving, and departing tour groups",
+          "Real-time passenger manifests with passport numbers and room configurations",
+          "Direct dispatch of hotel vouchers, driver work orders, and traveler QR passcodes"
+        ],
+        "ar": [
+          "لوحة العمليات الرئيسية للأفواج المتواجدة حالياً، والقادمة، والمغادرة",
+          "قوائم ركاب تفصيلية تشمل أرقام الجوازات وتوزيع الغرف المزدوجة والثلاثية",
+          "إصدار فوري لقسائم الفنادق (Vouchers)، أوامر تشغيل السائقين، ورموز QR للمسافرين"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "A trip file should be created from an accepted Quote or confirmed booking:",
+      "ar": "يجب أن يبدأ ملف الرحلة من عرض سعر مؤكد تم دفع عربونه أو حجز مباشر:",
+      "summaryEn": "A trip file should be created from an accepted Quote or confirmed booking:",
+      "summaryAr": "يجب أن يبدأ ملف الرحلة من عرض سعر مؤكد تم دفع عربونه أو حجز مباشر:",
+      "checklist": [
+        {
+          "id": "accepted_deal",
+          "en": "Confirmed booking or accepted Quote with customer deposit paid",
+          "ar": "وجود عرض سعر مؤكد أو حجز رسمي مع إيصال سداد الدفعة المقدمة",
+          "required": true
+        },
+        {
+          "id": "guest_passports",
+          "en": "Passenger passport scans / full legal names submitted",
+          "ar": "استلام صور جوازات السفر والأسماء المطابقة لوثائق السفر",
+          "required": true
+        },
+        {
+          "id": "supplier_confirmations",
+          "en": "Hotel confirmation numbers and transport supplier assigned",
+          "ar": "أرقام تأكيد حجز الفنادق وأسماء شركات النقل السياحي المعتمدة",
+          "required": true
+        }
+      ],
+      "recommendedPriorTab": {
+        "tab": "pipeline",
+        "labelEn": "Sales Pipeline",
+        "labelAr": "مسار المبيعات"
+      }
+    },
+    "nextSteps": {
+      "en": "Complete the operational readiness checklist across the dedicated sub-tools:",
+      "ar": "استكمل متطلبات الجاهزية التشغيلية عبر الأدوات المتخصصة التالية:",
+      "summaryEn": "Complete the operational readiness checklist across the dedicated sub-tools:",
+      "summaryAr": "استكمل متطلبات الجاهزية التشغيلية عبر الأدوات المتخصصة التالية:",
+      "links": [
+        {
+          "targetTab": "trips_rooming",
+          "labelEn": "Hotel Rooming Lists",
+          "labelAr": "قوائم تسكين الفنادق",
+          "hintEn": "Assign Double, Triple, and Quad rooms",
+          "hintAr": "توزيع النزلاء على الغرف بحسب الفندق والمدينة"
+        },
+        {
+          "targetTab": "trips_fleet",
+          "labelEn": "Fleet & Transportation",
+          "labelAr": "أسطول الحافلات والنقل",
+          "hintEn": "Assign drivers, bus plates, and flight transfers",
+          "hintAr": "جدولة السائقين، أرقام اللوحات، واستقبال المطار"
+        },
+        {
+          "targetTab": "trips_vouchers",
+          "labelEn": "Dispatch Vouchers",
+          "labelAr": "إصدار قسائم الخدمات",
+          "hintEn": "Generate official supplier booking vouchers",
+          "hintAr": "طباعة وإرسال أوامر التوريد للفنادق والموردين"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Print or sync the driver transfer sheet 24 hours prior to flight arrival to prevent airport delays.",
+        "Use the Traveler Mobile Portal passcode so travelers can access live daily itineraries without paper."
+      ],
+      "ar": [
+        "اطبع جدول تحركات السائقين قبل موعد الوصول بـ 24 ساعة لتفادي أي ارتباك في صالة المطار.",
+        "شارك المسافر رمز البوابة الرقمية ليطلع على برنامجه ومواعيده على هاتفه مباشرة دون ورق."
+      ]
+    }
+  },
+
+  "suppliers": {
+    "id": "suppliers",
+    "title": {
+      "en": "Suppliers Directory & Wholesaler Contracts",
+      "ar": "دليل الموردين وعقود الوكلاء"
+    },
+    "subtitle": {
+      "en": "Centralized registry of hotel chains, local DMCs, transport companies, and credit terms",
+      "ar": "السجل المعتمد لسلاسل الفنادق، شركات النقل، الوكلاء المحليين وشروط السداد"
+    },
+    "badge": {
+      "en": "Partnership Asset",
+      "ar": "شبكة الشركاء"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Maintains your agency’s institutional relationship network. Houses emergency contact numbers, negotiated allotment rates, credit terms, and partner ratings.",
+      "ar": "أصل استراتيجي لشركتك يحفظ شبكة علاقاتها الخارجية. يحتوي على أرقام الطوارئ المباشرة، الأسعار التفاضلية، شروط السداد، وسجل تقييم الجودة لكل مورد.",
+      "keyDeliverables": {
+        "en": [
+          "Direct WhatsApp and emergency operations phone contacts for duty managers",
+          "Track supplier credit limits, payment deadlines, and bank details",
+          "Filter partners by destination (Makkah, Madinah, Cairo, Dubai, Istanbul)"
+        ],
+        "ar": [
+          "أرقام واتساب وهواتف الطوارئ المباشرة لمديري الحجوزات والعمليات",
+          "متابعة التسهيلات الائتمانية والحدود المالية وحسابات التحويل البنكي",
+          "تصفية الموردين حسب الوجهة (مكة، المدينة، القاهرة، دبي، إسطنبول)"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Add partner details as soon as an agreement or rate sheet is received.",
+      "ar": "أضف بيانات الشريك فور استلام عرض الأسعار أو توقيع اتفاقية التعاقد.",
+      "summaryEn": "Add partner details as soon as an agreement or rate sheet is received.",
+      "summaryAr": "أضف بيانات الشريك فور استلام عرض الأسعار أو توقيع اتفاقية التعاقد.",
+      "checklist": [
+        {
+          "id": "supplier_profile",
+          "en": "Supplier operational profile and service agreement",
+          "ar": "الملف التشغيلي للمورد واتفاقية تقديم الخدمة",
+          "required": true
+        },
+        {
+          "id": "emergency_contact",
+          "en": "24/7 emergency dispatch phone number and reservation email",
+          "ar": "رقم هاتف طوارئ متاح 24 ساعة وبريد قسم الحجوزات",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Link supplier rates to your tariff library:",
+      "ar": "اربط أسعار هذا المورد بمكتبة التعريفات:",
+      "summaryEn": "Link supplier rates to your tariff library:",
+      "summaryAr": "اربط أسعار هذا المورد بمكتبة التعريفات:",
+      "links": [
+        {
+          "targetTab": "rates",
+          "labelEn": "Add Rates to Library",
+          "labelAr": "إضافة الأسعار لمكتبة التعريفات",
+          "hintEn": "Link hotel room rates to this supplier",
+          "hintAr": "ربط أسعار الغرف والخدمات بملف هذا المورد"
+        },
+        {
+          "targetTab": "quotes",
+          "labelEn": "Use in Quote Builder",
+          "labelAr": "استخدامها في عروض الأسعار",
+          "hintEn": "Select this supplier during package assembly",
+          "hintAr": "اختيار خدمات هذا المورد عند بناء برامج السفر"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Always record the WhatsApp number of the night-shift duty manager, not just the sales rep.",
+        "Review supplier ratings quarterly to replace chronically delayed transport vendors."
+      ],
+      "ar": [
+        "سجل دائماً رقم مسؤول النوبة الليلية وليس فقط مندوب المبيعات لتفادي مشاكل تسليم الغرف المتأخر.",
+        "راجع تقييمات الموردين فصلياً واستبعد الشركات التي تتكرر شكاوى المسافرين من حافلاتها."
+      ]
+    }
+  },
+
+  "rates": {
+    "id": "rates",
+    "title": {
+      "en": "Rate Library & Master Tariffs",
+      "ar": "مكتبة الأسعار والتعريفات المعتمدة"
+    },
+    "subtitle": {
+      "en": "Pre-negotiated buying prices for hotels, transfers, excursions, and visa services",
+      "ar": "أسعار الشراء الصافية المتفق عليها للفنادق، التنقلات، الجولات، والتأشيرات"
+    },
+    "badge": {
+      "en": "Cost Foundation",
+      "ar": "قاعدة التكاليف"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Stores net purchase tariffs categorized by season so sales coordinators can quote trips in under 3 minutes with guaranteed margins and zero arithmetic mistakes.",
+      "ar": "يحفظ أسعار التكلفة الصافية مقسمة حسب المواسم لتسعير أي برنامج سياحي في أقل من 3 دقائق بأرباح مضمونة ودون أخطاء حسابية.",
+      "keyDeliverables": {
+        "en": [
+          "Per-room and per-person cost formulas with occupancy multipliers",
+          "Seasonal validity dates preventing expired rate usage in high seasons",
+          "Automatic currency conversion based on central bank exchange rates"
+        ],
+        "ar": [
+          "معادلات تسعير مرنة للغرف وللشخص الواحد مع مضاعفات التسكين المختلفة",
+          "ربط الأسعار بفترات صلاحية موسمية تمنع استخدام أسعار منتهية في أوقات الذروة",
+          "تحويل تلقائي لقيم العملات بناءً على أسعار الصرف الحية المعتمدة"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Verify that the supplying hotel or vendor exists in your Suppliers directory.",
+      "ar": "تأكد من وجود الفندق أو شركة النقل مسبقاً في دليل الموردين قبل إدخال الأسعار.",
+      "summaryEn": "Verify that the supplying hotel or vendor exists in your Suppliers directory.",
+      "summaryAr": "تأكد من وجود الفندق أو شركة النقل مسبقاً في دليل الموردين قبل إدخال الأسعار.",
+      "checklist": [
+        {
+          "id": "supplier_exists",
+          "en": "Supplier profile created in Suppliers directory",
+          "ar": "وجود ملف المورد في دليل الشركاء",
+          "required": true
+        },
+        {
+          "id": "seasonal_dates",
+          "en": "Contract validity start and end dates specified",
+          "ar": "تحديد تواريخ بداية ونهاية الموسم للتعاقد",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Use tariffs inside Quote Builder:",
+      "ar": "استخدم الأسعار داخل مصمم العروض:",
+      "summaryEn": "Use tariffs inside Quote Builder:",
+      "summaryAr": "استخدم الأسعار داخل مصمم العروض:",
+      "links": [
+        {
+          "targetTab": "quotes",
+          "labelEn": "Open Quote Builder",
+          "labelAr": "فتح مصمم عروض الأسعار",
+          "hintEn": "Auto-fill hotel and transport costs",
+          "hintAr": "إدراج تكاليف الفنادق والسيارات بضغطة زر"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Set up Ramadan and Eid Peak seasons early for instant pilgrimage quotations.",
+        "Always input net rates including municipal and value-added taxes."
+      ],
+      "ar": [
+        "جهز تعريفات موسمي رمضان والأعياد مبكراً لتسعير طلبات العمرة الفورية دون انتظار.",
+        "أدخل دائماً السعر الصافي شاملاً ضريبة القيمة المضافة ورسوم البلدية لحماية هامش الربح."
+      ]
+    }
+  },
+
+  "hajj_umrah": {
+    "id": "hajj_umrah",
+    "title": {
+      "en": "Hajj & Umrah Pilgrimage Operations Desk",
+      "ar": "منظومة الحج والعمرة والزيارات النبوية الشريفة"
+    },
+    "subtitle": {
+      "en": "Comprehensive command center for pilgrimage groups, Nusuk portal compliance, and holy logistics",
+      "ar": "غرفة العمليات المركزية لإدارة الأفواج المقدسة، والربط مع منصة نُسك، ولوجستيات الحرمين"
+    },
+    "badge": {
+      "en": "Sacred Operations",
+      "ar": "خدمة ضيوف الرحمن"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Provides a spiritually elevated, operationally strict management vertical for religious pilgrimage travel to Makkah and Madinah in compliance with Saudi Ministry of Hajj & Umrah regulations and the Nusuk electronic track.",
+      "ar": "منظومة متكاملة لإدارة وتفويج رحلات الحج والعمرة والزيارة النبوية، متوافقة تماماً مع اشتراطات وزارة الحج والعمرة السعودية والمسار الإلكتروني الموحد لمنصة نُسك.",
+      "keyDeliverables": {
+        "en": [
+          "Live pilgrim distribution counters between Makkah, Madinah, and Haramain transit",
+          "Urgent electronic visa tracking with biometric status indicators",
+          "One-click turnkey package-to-quote conversion for rapid sales handoff",
+          "Interactive Haramain bullet train schedules, baggage rules, and airport Zamzam quotas"
+        ],
+        "ar": [
+          "إحصاء حي وتوزيع جغرافي للمعتمرين بين فنادق مكة وطيبة والقطار السريع",
+          "تتبع فوري ومحاكاة لاعتماد تأشيرات نُسك الإلكترونية والخصائص الحيوية (البصمة)",
+          "تحويل بنقرة واحدة لبرامج العمرة الجاهزة إلى عروض أسعار رسمية موثقة",
+          "دليل متكامل لمواعيد قطار الحرمين وضوابط الأمتعة وتوزيع عبوات ماء زمزم بالمطارات"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Ensure official agency licensing and accommodation contracts are verified before publishing packages or issuing manifests.",
+      "ar": "تأكد من تفعيل ترخيص الوكالة السياحية وتوثيق عقود الإسكان الفندقي بمكة والمدينة قبل إطلاق البرامج.",
+      "summaryEn": "Ensure official agency licensing and accommodation contracts are verified before publishing packages or issuing manifests.",
+      "summaryAr": "تأكد من تفعيل ترخيص الوكالة السياحية وتوثيق عقود الإسكان الفندقي بمكة والمدينة قبل إطلاق البرامج.",
+      "checklist": [
+        {
+          "id": "nusuk_license",
+          "en": "Authorized Saudi Umrah agency contract & Nusuk portal active credentials",
+          "ar": "عقد الوكالة السعودية المعتمدة وتفعيل بيانات الدخول لمنصة نُسك",
+          "required": true
+        },
+        {
+          "id": "tasreeh_hotels",
+          "en": "Verified Tasreeh municipality permits for partner hotels in Makkah and Madinah",
+          "ar": "تصاريح إسكان الحجاج والبلدية سارية المفعول لفنادق مكة والمدينة الشريكة",
+          "required": true
+        },
+        {
+          "id": "passport_scans",
+          "en": "High-resolution passport copies and personal photographs for pilgrims",
+          "ar": "صور ضوئية واضحة لجوازات السفر والصور الشخصية المطابقة لاشتراطات التأشيرة",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Use the specialized sub-tabs to progress from package pricing to airport dispatch:",
+      "ar": "تنقل عبر التبويبات المتخصصة لإتمام مراحل الرحلة من التسعير وحتى التوديع بالمطار:",
+      "summaryEn": "Use the specialized sub-tabs to progress from package pricing to airport dispatch:",
+      "summaryAr": "تنقل عبر التبويبات المتخصصة لإتمام مراحل الرحلة من التسعير وحتى التوديع بالمطار:",
+      "links": [
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "overview",
+          "labelEn": "Operations Overview",
+          "labelAr": "المؤشرات التشغيلية وتوزيع المعتمرين",
+          "hintEn": "Monitor active delegations and impending flights",
+          "hintAr": "متابعة توزيع الأفواج والرحلات المغادرة خلال 72 ساعة"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "packages",
+          "labelEn": "Pilgrimage Packages",
+          "labelAr": "باقات وبرامج العمرة",
+          "hintEn": "Browse pre-configured programs and convert to quotes",
+          "hintAr": "استعراض البرامج الجاهزة وتحويلها لعرض سعر للعميل"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "calculator",
+          "labelEn": "Umrah Cost Calculator",
+          "labelAr": "حاسبة تكاليف العمرة",
+          "hintEn": "Compute customized pricing per pilgrim and room sharing",
+          "hintAr": "حساب دقيق لليالي والفنادق والتسكين الثنائي والرباعي"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "ziyarat",
+          "labelEn": "Sacred Ziyarat Map",
+          "labelAr": "خريطة المزارات النبوية",
+          "hintEn": "Google Maps holy landmarks and walking distances",
+          "hintAr": "معالم مكة والمدينة ومسافاتها عن الحرمين الشريفين"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "rituals",
+          "labelEn": "Ritual Steps Progress",
+          "labelAr": "متابعة خطوات المناسك",
+          "hintEn": "Step-by-step checklist with prophetic supplications",
+          "hintAr": "دليل مراحل الإحرام والطواف والسعي والأدعية المأثورة"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "logistics",
+          "labelEn": "Rail & Zamzam Logistics",
+          "labelAr": "قطار الحرمين وسقيا زمزم",
+          "hintEn": "Bullet train ticketing and airport bottle barcodes",
+          "hintAr": "تذاكر القطار السريع وتتبع حصص مياه زمزم الرسمية"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Always issue Haramain train tickets at least 3 weeks in advance during high seasons.",
+        "Airport Zamzam distribution enforces 1 bottle (5L) per pilgrim linked to international flight numbers."
+      ],
+      "ar": [
+        "احجز مقاعد قطار الحرمين قبل 3 أسابيع على الأقل في مواسم رجب وشعبان ورمضان لتفادي نفاد المقاعد.",
+        "تطبق صالات المغادرة بمطاري جدة والمدينة فحصاً إلكترونياً لربط عبوة زمزم (5 لتر) بتذكرة الطيران الدولية."
+      ]
+    }
+  },
+
+  "hajj_hub": {
+    "id": "hajj_hub",
+    "title": {
+      "en": "Hajj & Umrah Pilgrimage Operations Hub",
+      "ar": "منظومة الحج والعمرة والزيارات النبوية"
+    },
+    "subtitle": {
+      "en": "End-to-end command center for sacred delegations, Nusuk compliance, hotels, and rituals",
+      "ar": "غرفة القيادة المتكاملة للأفواج المقدسة، اشتراطات نُسك، الفنادق، والمناسك"
+    },
+    "badge": {
+      "en": "Sacred Operations",
+      "ar": "خدمة ضيوف الرحمن"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "A dedicated operational suite specifically engineered for the unique spiritual, logistical, and regulatory demands of pilgrimage travel to Makkah and Madinah in strict alignment with Saudi Ministry of Hajj & Umrah (Nusuk).",
+      "ar": "منظومة متخصصة مصممة لتلبية الخصوصية الروحية واللوجستية لرحلات الحج والعمرة وزيارة الحرمين الشريفين، مع الالتزام الكامل باشتراطات وزارة الحج والعمرة ومنصة نُسك.",
+      "keyDeliverables": {
+        "en": [
+          "High-level operational stats (Active groups, pending Nusuk visas, flight departures)",
+          "Instant Umrah cost engineering with Haram proximity multipliers and room sharing",
+          "Official Nusuk group manifest generation and Haramain train logistics tracking"
+        ],
+        "ar": [
+          "إحصائيات تشغيلية فورية (الأفواج النشطة، تأشيرات نُسك المعلقة، والرحلات المغادرة)",
+          "حساب تكاليف برامج العمرة مع مراعاة القرب من الحرم المكي وتوزيع الغرف الرباعية والثنائية",
+          "إصدار كشوفات الحجاج المعتمدة وتنسيق رحلات قطار الحرمين وسقيا زمزم"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Before operating Hajj/Umrah groups, verify agency licensing and base pilgrim records:",
+      "ar": "قبل تشغيل رحلات الحج والعمرة، تأكد من تراخيص الوكالة واستيفاء بيانات المعتمرين:",
+      "summaryEn": "Before operating Hajj/Umrah groups, verify agency licensing and base pilgrim records:",
+      "summaryAr": "قبل تشغيل رحلات الحج والعمرة، تأكد من تراخيص الوكالة واستيفاء بيانات المعتمرين:",
+      "checklist": [
+        {
+          "id": "nusuk_credentials",
+          "en": "Saudi Nusuk portal agency credentials & Umrah company contract",
+          "ar": "تفعيل حساب الوكالة على منصة نُسك وعقد الوكالة السعودية المعتمدة",
+          "required": true
+        },
+        {
+          "id": "makkah_madinah_allotments",
+          "en": "Confirmed hotel room blocks in Makkah and Madinah with Tasreeh",
+          "ar": "حجز حصص الغرف الفندقية بمكة والمدينة وتصاريح الإسكان المعتمدة",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Explore the dedicated operational sub-tabs to manage every phase of the sacred journey:",
+      "ar": "تنقل بين التبويبات المتخصصة لإدارة كل مرحلة من رحلة المعتمرين بدقة واحترافية:",
+      "summaryEn": "Explore the dedicated operational sub-tabs to manage every phase of the sacred journey:",
+      "summaryAr": "تنقل بين التبويبات المتخصصة لإدارة كل مرحلة من رحلة المعتمرين بدقة واحترافية:",
+      "links": [
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "overview",
+          "labelEn": "Operational Overview & Headcount",
+          "labelAr": "الإحصائيات وتوزيع المعتمرين",
+          "hintEn": "Live distribution between Makkah and Madinah",
+          "hintAr": "توزيع الأفواج في مكة والمدينة وتنبيهات التأشيرات"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "calculator",
+          "labelEn": "Umrah Cost Calculator",
+          "labelAr": "حاسبة تكاليف العمرة",
+          "hintEn": "Dynamic pricing for nights and room configurations",
+          "hintAr": "تسعير البرامج حسب نجوم الفندق وتشارك الغرف"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "ziyarat",
+          "labelEn": "Sacred Ziyarat Directory",
+          "labelAr": "دليل المزارات النبوية",
+          "hintEn": "Interactive holy sites map with distance from Haram",
+          "hintAr": "خريطة تفاعلية للمواقع المقدسة ومسافاتها عن الحرم"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Saudi authorities enforce strict barcode scanning for airport Zamzam water distribution; ensure passenger flight numbers match tickets.",
+        "Pre-book Haramain High Speed Rail seats at least 3 weeks prior during Rajab, Shaban, and Ramadan."
+      ],
+      "ar": [
+        "تطبق السلطات السعودية فحصاً إلكترونياً لعبوات ماء زمزم بالمطار؛ تأكد من تطابق بيانات التذكرة.",
+        "احجز مقاعد قطار الحرمين السريع قبل 3 أسابيع على الأقل في مواسم رجب وشعبان ورمضان."
+      ]
+    }
+  },
+
+  "hajj_overview": {
+    "id": "hajj_overview",
+    "title": {
+      "en": "Pilgrimage Status & Headcount Overview",
+      "ar": "المؤشرات التشغيلية وتوزيع المعتمرين"
+    },
+    "subtitle": {
+      "en": "Real-time pilgrim locations (Makkah vs Madinah vs Transit), visa alerts, and flight departures",
+      "ar": "مواقع المعتمرين لحظياً (مكة / المدينة / في الطريق)، تنبيهات التأشيرات، والرحلات"
+    },
+    "badge": {
+      "en": "Live Operations",
+      "ar": "التشغيل اللحظي"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Gives the pilgrimage operations director an instantaneous snapshot of where every pilgrim is located right now, highlighting urgent visa deadlines and imminent airport departures to prevent missed flights or legal overstays.",
+      "ar": "يمنح مدير عمليات الحج والعمرة رؤية لحظية دقيقة لأماكن تواجد كافة المعتمرين حالياً، مع تسليط الضوء على التأشيرات العاجلة ومواعيد الطيران الوشيكة لمنع أي تأخير أو مخالفات إقامة.",
+      "keyDeliverables": {
+        "en": [
+          "Live pilgrim counter divided by current city (Makkah hotels vs Madinah hotels vs Haramain transit)",
+          "Urgent Nusuk Visa Tracker highlighting applications requiring biometric or Ministry actions",
+          "Countdown alerts for next international departures out of JED / MED airports"
+        ],
+        "ar": [
+          "إحصاء فوري لأعداد المعتمرين مقسمين حسب المدينة (فنادق مكة، فنادق المدينة، في طريق السفر)",
+          "شاشة إنذار لتأشيرات نُسك العاجلة للكشف عن النواقص البيومترية وموافقات الوزارة",
+          "عد تنازلي لمواعيد إقلاع رحلات الطيران الدولية القادمة من مطاري جدة والمدينة"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "This overview computes metrics automatically from your confirmed pilgrimage groups and flight lists:",
+      "ar": "تُحسب هذه المؤشرات تلقائياً من قوائم الأفواج ورحلات الطيران والتأشيرات المسجلة:",
+      "summaryEn": "This overview computes metrics automatically from your confirmed pilgrimage groups and flight lists:",
+      "summaryAr": "تُحسب هذه المؤشرات تلقائياً من قوائم الأفواج ورحلات الطيران والتأشيرات المسجلة:",
+      "checklist": [
+        {
+          "id": "group_roster",
+          "en": "Pilgrim group manifests uploaded with arrival/departure dates",
+          "ar": "تسجيل بيانات الأفواج ومواعيد الوصول والمغادرة",
+          "required": true
+        },
+        {
+          "id": "visa_records",
+          "en": "Visa application tracking numbers synced with Nusuk status",
+          "ar": "متابعة أرقام طلبات التأشيرات وحالتها في المسار الإلكتروني",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Act on urgent alerts or proceed to package and price new incoming pilgrim delegations:",
+      "ar": "تعامل مع التنبيهات العاجلة أولاً أو انتقل لتسعير باقات جديدة للعملاء:",
+      "summaryEn": "Act on urgent alerts or proceed to package and price new incoming pilgrim delegations:",
+      "summaryAr": "تعامل مع التنبيهات العاجلة أولاً أو انتقل لتسعير باقات جديدة للعملاء:",
+      "links": [
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "packages",
+          "labelEn": "Review Pilgrimage Packages",
+          "labelAr": "باقات وبرامج العمرة",
+          "hintEn": "Browse curated programs or quote VIP clients",
+          "hintAr": "استعراض الباقات الجاهزة أو تحويلها لعرض سعر"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "rituals",
+          "labelEn": "Ritual Progress Tracking",
+          "labelAr": "متابعة خطوات المناسك",
+          "hintEn": "Verify Ihram and Tawaf readiness",
+          "hintAr": "التأكد من جاهزية الفوج للإحرام والطواف"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Click directly on any metric card (like Pending Visas) to open the interactive drill-down inspection modal.",
+        "Use the 'Simulate Nusuk Approval' button to test visa issuance workflows in real-time."
+      ],
+      "ar": [
+        "اضغط مباشرة على بطاقة المؤشر (مثل التأشيرات المعلقة) لفتح نافذة الفحص التفصيلي.",
+        "استعن بزر محاكاة موافقة نُسك لاختبار تدفق إصدار التأشيرات الإلكترونية فورياً."
+      ]
+    }
+  },
+
+  "hajj_packages": {
+    "id": "hajj_packages",
+    "title": {
+      "en": "Curated Pilgrimage Packages & 1-Click Quote",
+      "ar": "باقات العمرة الجاهزة والتحويل السريع"
+    },
+    "subtitle": {
+      "en": "Pre-designed 5-star, 4-star, and economic packages with instant quote generation",
+      "ar": "برامج سياحية متكاملة (5 نجوم، 4 نجوم، اقتصادي) مع تحويل فوري لعرض سعر"
+    },
+    "badge": {
+      "en": "Turnkey Programs",
+      "ar": "باقات معتمدة"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Provides travel sales consultants with pre-configured, rigorously costed pilgrimage programs. Each package includes Makkah and Madinah hotels, Haram walking distances, train tickets, and transfers, ready to convert into a client quote in 1 click.",
+      "ar": "يوفر لموظفي المبيعات باقات عمرة وحج جاهزة ومدروسة التكاليف بدقة. تتضمن كل باقة فنادق مكة والمدينة والمسافات عن الحرم وقطار الحرمين، مع إمكانية تحويلها بضغطة زر لعرض سعر رسمي.",
+      "keyDeliverables": {
+        "en": [
+          "Filterable catalog: 5-Star VIP, 4-Star Classical, Economic, and Executive Hajj",
+          "Hotel distance transparency (e.g. 150m from Clock Tower, 250m from Prophet Mosque)",
+          "1-Click 'Convert to Quote' handoff directly into the Proposal Viewer"
+        ],
+        "ar": [
+          "كتالوج مصنف: 5 نجوم فاخر، 4 نجوم كلاسيك، اقتصادي مريح، وحج سياحي راقٍ",
+          "بيان دقيق للمسافات عن الحرمين (مثل: 150م من ساحة الحرم، 250م من الروضة الشريفة)",
+          "زر تحويل بنقرة واحدة ينقل كافة بنود الباقة لمصمم العروض ومولد ملفات الـ PDF"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Ensure hotel contract rates and room quotas for the season are verified before publishing packages:",
+      "ar": "تأكد من توافر الغرف وأسعار الموسم قبل إرسال عروض الباقات للمسافرين:",
+      "summaryEn": "Ensure hotel contract rates and room quotas for the season are verified before publishing packages:",
+      "summaryAr": "تأكد من توافر الغرف وأسعار الموسم قبل إرسال عروض الباقات للمسافرين:",
+      "checklist": [
+        {
+          "id": "hotel_allotment",
+          "en": "Room allotment confirmed with partner hotel in Makkah & Madinah",
+          "ar": "تأكيد توافر الغرف لدى الفنادق الشريكة في مكة والمدينة",
+          "required": true
+        },
+        {
+          "id": "target_client",
+          "en": "Identify traveler group size and rooming preference (Double vs Quad)",
+          "ar": "معرفة حجم الفوج أو العائلة ونوع التسكين المفضل (ثنائي أو رباعي)",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "When the client is pleased with a package tier:",
+      "ar": "عند إعجاب العميل بإحدى الباقات المعروضة:",
+      "summaryEn": "When the client is pleased with a package tier:",
+      "summaryAr": "عند إعجاب العميل بإحدى الباقات المعروضة:",
+      "links": [
+        {
+          "targetTab": "quotes",
+          "labelEn": "Review & Send Proposal",
+          "labelAr": "مراجعة وإرسال العرض",
+          "hintEn": "Add client legal names & generate branded PDF",
+          "hintAr": "إضافة اسم العميل وتصدير العرض الموثق"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "calculator",
+          "labelEn": "Customize with Calculator",
+          "labelAr": "تعديل التكلفة بالحاسبة",
+          "hintEn": "Add extra nights or upgrade room view",
+          "hintAr": "إضافة ليالٍ إضافية أو ترقية إطلالة الغرفة"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Highlight Haram-view upgrades during the initial pitch; 35% of pilgrims opt to upgrade when shown photo mockups.",
+        "Always specify if the package includes King Abdullah Zamzam project airport bottles."
+      ],
+      "ar": [
+        "اعرض خيار الترقية لإطلالة الكعبة مباشرة؛ أكثر من 35% من المعتمرين يفضلون الترقية عند توضيح الفارق.",
+        "وضح دائماً في تفاصيل الباقة ما إذا كانت تشمل عبوة ماء زمزم المغلفة من مطار المغادرة."
+      ]
+    }
+  },
+
+  "hajj_calculator": {
+    "id": "hajj_calculator",
+    "title": {
+      "en": "Interactive Umrah Cost Calculator",
+      "ar": "حاسبة تكاليف العمرة التفاعلية"
+    },
+    "subtitle": {
+      "en": "Dynamic pricing engine for nights, hotel star tiers, room occupancy, and rail travel",
+      "ar": "حساب ديناميكي فوري لليالي، مستويات الفنادق، نوع التسكين، وتذاكر القطار"
+    },
+    "badge": {
+      "en": "Dynamic Costing",
+      "ar": "حساب مخصص"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Allows operators to answer custom telephone or WhatsApp inquiries on the fly. Adjust Makkah nights, Madinah nights, room occupancy (Single, Double, Triple, Quad), and Haramain high-speed rail to produce instant per-pilgrim pricing.",
+      "ar": "تمكن موظف المبيعات من تسعير أي استفسار هاتفي أو عبر واتساب خلال ثوانٍ معدودة. عدل ليالي مكة، ليالي المدينة، نوع التسكين (مفرد، ثنائي، ثلاثي، رباعي)، وقطار الحرمين لتحصل على سعر دقيق للشخص.",
+      "keyDeliverables": {
+        "en": [
+          "Sliders for Makkah and Madinah night durations with live total cost breakdown",
+          "Hotel tier selector (5-Star Front Row, 5-Star Luxury, 4-Star Walking, 3-Star Shuttle)",
+          "Room occupancy divider automatically calculating per-person price in USD, SAR, or EGP"
+        ],
+        "ar": [
+          "أشرطة تمرير لتحديد ليالي مكة والمدينة مع تفصيل فوري لبنود التكلفة الإجمالية",
+          "اختيار تصنيف الفنادق (صف أول مباشر على الحرم، فاخر، 4 نجوم سيراً، أو اقتصادي بحافلة)",
+          "توزيع تكلفة الغرفة حسب عدد الشركاء (فردي، ثنائي، ثلاثي، رباعي) بالريال والدولار والجنيه"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Before calculating, know the family size and their intended travel dates:",
+      "ar": "قبل البدء في الحساب، اعرف عدد أفراد الأسرة وتاريخ السفر المتوقع:",
+      "summaryEn": "Before calculating, know the family size and their intended travel dates:",
+      "summaryAr": "قبل البدء في الحساب، اعرف عدد أفراد الأسرة وتاريخ السفر المتوقع:",
+      "checklist": [
+        {
+          "id": "room_sharing",
+          "en": "Clarify room sharing preference (e.g. Quad for economy, Double for couple)",
+          "ar": "تحديد نوع التسكين المطلوب (غرفة رباعية للتوفير أو ثنائية للزوجين)",
+          "required": true
+        },
+        {
+          "id": "season_check",
+          "en": "Confirm if travel falls inside Ramadan or peak holiday periods",
+          "ar": "التأكد مما إذا كان موعد السفر يصادف شهر رمضان أو عطلات منتصف العام",
+          "required": true
+        }
+      ],
+      "recommendedPriorTab": {
+        "tab": "inbox",
+        "labelEn": "Inquiry Inbox",
+        "labelAr": "صندوق الاستفسارات"
+      }
+    },
+    "nextSteps": {
+      "en": "Once price matches the client budget:",
+      "ar": "بمجرد التوصل للسعر المناسب لميزانية العميل:",
+      "summaryEn": "Once price matches the client budget:",
+      "summaryAr": "بمجرد التوصل للسعر المناسب لميزانية العميل:",
+      "links": [
+        {
+          "targetTab": "quotes",
+          "labelEn": "Generate Custom Quote",
+          "labelAr": "توليد عرض سعر رسمي",
+          "hintEn": "Lock calculated rate into formal proposal",
+          "hintAr": "تثبيت الأرقام المحسوبة في عرض أسعار رسمي للعميل"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "ziyarat",
+          "labelEn": "Attach Sacred Ziyarat Plan",
+          "labelAr": "إرفاق برنامج المزارات",
+          "hintEn": "Add historical visits to Makkah & Madinah sites",
+          "hintAr": "إضافة جولات المعالم والمزارات التاريخية للبرنامج"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Quad room sharing reduces the per-person package price by 30-45% compared to Double occupancy.",
+        "Adding Haramain Business Class rail between Makkah and Madinah saves 3.5 hours compared to highway buses."
+      ],
+      "ar": [
+        "التسكين الرباعي يخفض تكلفة الفرد في البرنامج بنسبة 30% إلى 45% مقارنة بالتسكين الثنائي.",
+        "إضافة تذاكر قطار الحرمين درجة الأعمال يوفر 3.5 ساعات من زمن الرحلة الشاقة بالحافلات."
+      ]
+    }
+  },
+
+  "hajj_ziyarat_map": {
+    "id": "hajj_ziyarat_map",
+    "title": {
+      "en": "Sacred Ziyarat Sites & Interactive Map",
+      "ar": "دليل وخريطة المزارات النبوية والمعالم المقدسة"
+    },
+    "subtitle": {
+      "en": "Curated historical sites in Makkah & Madinah with distances, etiquette, and driver guidance",
+      "ar": "المواقع التاريخية في مكة والمدينة، مسافاتها عن الحرم، آداب الزيارة وتوجيه السائقين"
+    },
+    "badge": {
+      "en": "Spiritual Guide",
+      "ar": "معالم ومزارات"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Empowers tour coordinators and pilgrimage guides to brief travelers on holy landmarks across Makkah and Madinah. Integrates interactive Google Maps, exact travel distances from the pilgrim hotels, historical significance, and visiting times.",
+      "ar": "يُمكّن مسؤولي الأفواج والمرشدين من إحاطة الحجاج والمعتمرين بالمعالم التاريخية والإيمانية بمكة والمدينة. يدمج خريطة تفاعلية، ومسافات دقيقة عن الفنادق، والأهمية التاريخية، وأفضل أوقات الزيارة.",
+      "keyDeliverables": {
+        "en": [
+          "Interactive Google Map showcasing holy sites across Makkah (Hira, Thawr, Arafat) and Madinah (Quba, Uhud, Qiblatain)",
+          "Accurate walking and driving distance indicators relative to hotel central clusters",
+          "Spiritual etiquette, recommended supplications, and accessibility notices for elderly pilgrims"
+        ],
+        "ar": [
+          "خريطة تفاعلية لمعالم مكة (غار حراء، غار ثور، مشعر عرفات) والمدينة (مسجد قباء، شهداء أحد، القبلتين)",
+          "حساب دقيق للمسافات وزمن الوصول بالسيارة وسيراً على الأقدام من فنادق الحرم المركزية",
+          "بيان الآداب الشرعية، الأدعية المأثورة، وملاحظات ممرات الكراسي المتحركة لكبار السن"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Before dispatching a Ziyarat excursion, ensure transportation and group permits are ready:",
+      "ar": "قبل انطلاق جولة المزارات، تأكد من جاهزية وسيلة النقل والتنسيق مع مرشد الفوج:",
+      "summaryEn": "Before dispatching a Ziyarat excursion, ensure transportation and group permits are ready:",
+      "summaryAr": "قبل انطلاق جولة المزارات، تأكد من جاهزية وسيلة النقل والتنسيق مع مرشد الفوج:",
+      "checklist": [
+        {
+          "id": "transport_booking",
+          "en": "Private tour bus or licensed van booked for the group excursion",
+          "ar": "تأكيد حجز الحافلة السياحية أو السيارة الخاصة للجولة مع السائق",
+          "required": true
+        },
+        {
+          "id": "timing_slot",
+          "en": "Confirm excursion timing does not conflict with obligatory prayer times",
+          "ar": "التأكد من أن موعد الجولة لا يتعارض مع مواعيد الصلوات المفروضة بالحرم",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Coordinate with transport operations to dispatch buses or review ritual guides:",
+      "ar": "نسق مع قسم الحركة لتوجيه الحافلات أو راجع خطوات المناسك الميدانية:",
+      "summaryEn": "Coordinate with transport operations to dispatch buses or review ritual guides:",
+      "summaryAr": "نسق مع قسم الحركة لتوجيه الحافلات أو راجع خطوات المناسك الميدانية:",
+      "links": [
+        {
+          "targetTab": "trips_fleet",
+          "labelEn": "Fleet & Bus Dispatch",
+          "labelAr": "حركة الحافلات والسائقين",
+          "hintEn": "Send driver location and pickup schedule",
+          "hintAr": "إرسال جدول التحرك ومواقع التجمع للسائقين"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "rituals",
+          "labelEn": "Pilgrim Ritual Checklist",
+          "labelAr": "دليل وخطوات المناسك",
+          "hintEn": "Review Ihram and Tawaf step-by-step",
+          "hintAr": "متابعة خطوات الإحرام والطواف والسعي"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Visiting Mount Uhud and Quba Mosque is best scheduled early Saturday or Tuesday morning to avoid noon heat.",
+        "Hira Cultural District features a modern paved funicular for visitors who cannot climb Jabal al-Nour."
+      ],
+      "ar": [
+        "أفضل وقت لزيارة شهداء أحد ومسجد قباء هو الصباح الباكر (الضحى) لتجنب حرارة شمس الظهيرة.",
+        "يضم حي حراء الثقافي الآن مساراً ممهداً ومتحفاً يتيح للمسنين التعرف على الغار دون مشقة صعود الجبل."
+      ]
+    }
+  },
+
+  "hajj_rituals": {
+    "id": "hajj_rituals",
+    "title": {
+      "en": "Ritual Steps Guide & Group Checklist",
+      "ar": "دليل المناسك المصورة ومتابعة جاهزية الفوج"
+    },
+    "subtitle": {
+      "en": "Stage-by-stage guide for Ihram, Tawaf, Sa’i, and Tahallul with verified Islamic supplications",
+      "ar": "متابعة مراحل الإحرام، الطواف، السعي، والحلق مع الأدعية النبوية المأثورة"
+    },
+    "badge": {
+      "en": "Ritual Progress",
+      "ar": "متابعة المناسك"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Provides pilgrimage coordinators and travelers with a verified checklist for every religious rite of Umrah and Hajj. Allows staff to mark progress per group, guide elders, and provide authentic Arabic du’aa text with phonetic transcripts.",
+      "ar": "يوفر لمرشدي ومسؤولي الأفواج سجلاً تفاعلياً موثوقاً لمتابعة أداء شعائر العمرة والحج خطوة بخطوة، مع تتبع حالة كل فوج وتقديم نصوص الأدعية النبوية الصحيحة والمأثورة.",
+      "keyDeliverables": {
+        "en": [
+          "Sequential 4-stage Umrah guide: 1. Ihram & Miqat ➔ 2. Tawaf al-Umrah ➔ 3. Sa’i Safa & Marwa ➔ 4. Halq / Taqsir",
+          "Interactive checklist to mark group completion and log Mutawwif field notes",
+          "Verified prophetic supplications (Talbiyah, Tawaf corner du’aa, Safa supplication)"
+        ],
+        "ar": [
+          "دليل تسلسلي لمناسك العمرة: 1. الإحرام والميقات ➔ 2. طواف العمرة ➔ 3. السعي بين الصفا والمروة ➔ 4. الحلق أو التقصير",
+          "قائمة تفاعلية لتأكيد إتمام كل منسك للفوج وتدوين ملاحظات المطوف والمرشد المرافق",
+          "نصوص الأدعية المأثورة (التلبية، دعاء الركن اليماني ومقام إبراهيم، أدعية الصفا والمروة)"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Ensure the group is informed of Miqat crossing points before boarding flights or high-speed trains:",
+      "ar": "تأكد من تنبيه المعتمرين بمحاذاة الميقات الشرعي قبل ركوب الطائرة أو قطار الحرمين:",
+      "summaryEn": "Ensure the group is informed of Miqat crossing points before boarding flights or high-speed trains:",
+      "summaryAr": "تأكد من تنبيه المعتمرين بمحاذاة الميقات الشرعي قبل ركوب الطائرة أو قطار الحرمين:",
+      "checklist": [
+        {
+          "id": "miqat_briefing",
+          "en": "Travelers briefed on Ihram dress code and Miqat intentions",
+          "ar": "توجيه المسافرين لارتداء ملابس الإحرام وعقد النية عند محاذاة الميقات",
+          "required": true
+        },
+        {
+          "id": "guide_assigned",
+          "en": "Designated group leader or licensed Mutawwif assigned to lead Tawaf",
+          "ar": "تحديد المرشد الديني أو المطوف المصاحب لقيادة الفوج في الطواف",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "After completing rites, coordinate transport for luggage and check logistics:",
+      "ar": "بعد التحلل وإتمام المناسك، تابع لوجستيات استلام المياه والحقائب:",
+      "summaryEn": "After completing rites, coordinate transport for luggage and check logistics:",
+      "summaryAr": "بعد التحلل وإتمام المناسك، تابع لوجستيات استلام المياه والحقائب:",
+      "links": [
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "logistics",
+          "labelEn": "Haramain Rail & Zamzam Logistics",
+          "labelAr": "قطار الحرمين وسقيا زمزم",
+          "hintEn": "Manage Zamzam barcode quotas & train tickets",
+          "hintAr": "تأكيد تذاكر القطار واستلام حصص عبوات زمزم"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "ziyarat",
+          "labelEn": "Plan Historical Ziyarat",
+          "labelAr": "جدولة جولات المزارات",
+          "hintEn": "Excursions to Mount Uhud and Quba Mosque",
+          "hintAr": "تنظيم زيارة مسجد قباء وجبل أحد وباقي المعالم"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Recommend performing Tawaf on the ground floor Mataf late at night (after 1:00 AM) for significantly lower crowd density.",
+        "Advise male pilgrims that trim (Taqsir) must be uniform across the entire head, not just a single lock."
+      ],
+      "ar": [
+        "يُفضل أداء طواف العمرة في صحن المطاف الأرضي بعد الواحدة ليلاً حيث تقل الكثافة بصورة ملحوظة.",
+        "نبه المعتمرين بأن التقصير يقتضي الأخذ من عموم شعر الرأس بالتساوي وليس خصلة واحدة فقط."
+      ]
+    }
+  },
+
+  "hajj_logistics": {
+    "id": "hajj_logistics",
+    "title": {
+      "en": "Haramain High-Speed Rail & Zamzam Logistics",
+      "ar": "لوجستيات قطار الحرمين وسقيا زمزم"
+    },
+    "subtitle": {
+      "en": "Train seat ticketing, airport Zamzam barcode quotas, and group baggage policies",
+      "ar": "تذاكر وحجوزات القطار السريع، أكواد ماء زمزم بالمطار، وضوابط الأمتعة"
+    },
+    "badge": {
+      "en": "Infrastructure",
+      "ar": "اللوجستيات المركزية"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Handles the two most critical physical logistics of the pilgrimage journey: rapid intercity transit aboard the 300 km/h Haramain High-Speed Railway, and authorized airport distribution of King Abdullah Zamzam project water bottles.",
+      "ar": "يدير أهم عنصرين لوجستيين في رحلة الحج والعمرة: التنقل السريع بين مكة والمدينة عبر قطار الحرمين السريع (300 كم/س)، وآلية استلام عبوات مشروع الملك عبدالله لسقيا زمزم بالمطار.",
+      "keyDeliverables": {
+        "en": [
+          "Haramain bullet train schedule guide, luggage dimensions, and business class perks",
+          "King Abdullah Zamzam Project distribution protocols at JED and MED airports",
+          "Group boarding barcode readiness checklists preventing terminal bottlenecks"
+        ],
+        "ar": [
+          "دليل مواعيد قطار الحرمين، أوزان وأبعاد الحقائب المسموحة، ومزايا درجة الأعمال",
+          "بروتوكولات استلام عبوات زمزم الرسمية في صالات المغادرة بمطاري جدة والمدينة",
+          "قوائم التأكد من وجود الباركود على التذاكر لتجنب التكدس عند بوابات الصعود"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Ensure train tickets and Zamzam quota vouchers match confirmed flight tickets:",
+      "ar": "تأكد من مطابقة حجز القطار وكوبونات زمزم مع بيانات تذاكر الطيران المؤكدة:",
+      "summaryEn": "Ensure train tickets and Zamzam quota vouchers match confirmed flight tickets:",
+      "summaryAr": "تأكد من مطابقة حجز القطار وكوبونات زمزم مع بيانات تذاكر الطيران المؤكدة:",
+      "checklist": [
+        {
+          "id": "train_booking_ref",
+          "en": "Haramain Rail PNR numbers issued with passport numbers attached",
+          "ar": "إصدار أرقام حجوزات قطار الحرمين (PNR) وربطها بأرقام الجوازات",
+          "required": true
+        },
+        {
+          "id": "zamzam_receipts",
+          "en": "Authorized Zamzam payment receipts linked to passenger flight tickets",
+          "ar": "ربط إيصالات سداد ماء زمزم الرسمية بأرقام تذاكر العودة للمسافرين",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Ensure airport transfer buses are scheduled to meet the train at the destination terminal:",
+      "ar": "تأكد من تواجد حافلات الاستقبال في محطة القطار لنقل الحجاج إلى فنادقهم:",
+      "summaryEn": "Ensure airport transfer buses are scheduled to meet the train at the destination terminal:",
+      "summaryAr": "تأكد من تواجد حافلات الاستقبال في محطة القطار لنقل الحجاج إلى فنادقهم:",
+      "links": [
+        {
+          "targetTab": "trips_fleet",
+          "labelEn": "Schedule Station Transfers",
+          "labelAr": "جدولة استقبال محطة القطار",
+          "hintEn": "Assign drivers for train arrival pickups",
+          "hintAr": "توجيه السائقين لاستقبال الفوج عند رصيف المحطة"
+        },
+        {
+          "targetTab": "hajj_umrah",
+          "targetSubTab": "overview",
+          "labelEn": "Return to Pilgrimage Overview",
+          "labelAr": "العودة للوحة المؤشرات الرئيسية",
+          "hintEn": "Monitor active headcount & departing flights",
+          "hintAr": "متابعة حركة الأفواج المتبقية وتأكيد الرحلات"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Haramain train strictly allows 1 large suitcase (up to 32 kg) plus 1 handbag per passenger; send excess cargo by road transport.",
+        "Zamzam 5-liter bottles are packed in leak-proof cartons and can only be checked in as special hold baggage at the airport."
+      ],
+      "ar": [
+        "يسمح قطار الحرمين بحقيبة واحدة كبيرة (حتى 32 كجم) وحقيبة يد واحدة لكل راكب؛ انقل الحقائب الزائدة براً.",
+        "عبوات زمزم سعة 5 لتر معبأة في كراتين محكمة الإغلاق وتشحن كأمتعة خاصة داخل عنبر الطائرة فقط."
+      ]
+    }
+  },
+
+  "analytics": {
+    "id": "analytics",
+    "title": {
+      "en": "Analytics, ROI & Performance Metrics",
+      "ar": "التحليلات ومؤشرات الأداء والعائد التشغيلي"
+    },
+    "subtitle": {
+      "en": "Real-time visibility into inquiry conversion SLAs, quotation velocity, and team operational impact",
+      "ar": "رؤية حية لسرعة الرد على الاستفسارات ومعدلات إغلاق العروض والأثر التشغيلي للوكالة"
+    },
+    "badge": {
+      "en": "Intelligence & Metrics",
+      "ar": "تحليلات الأداء"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Aggregates end-to-end DMC performance metrics from initial lead intake to confirmed booking. Tracks SLA compliance, average time-to-first-quote, and revenue pipeline velocity.",
+      "ar": "يقيس الأداء التشغيلي الشامل للوكالة من أول استفسار وحتى تأكيد الحجز. يتابع الالتزام بمهل الرد وسرعة إعداد العروض وتدفق الإيرادات.",
+      "keyDeliverables": {
+        "en": [
+          "Tracking of average inquiry response time against the 2-hour target",
+          "Conversion funnel ratios from initial inquiry to paid booking",
+          "Operational ROI benchmarks highlighting time and labor savings"
+        ],
+        "ar": [
+          "قياس متوسط سرعة الرد على استفسارات العملاء مقارنة بهدف الساعتين",
+          "نسب تحويل العملاء من أول استفسار إلى حجز مؤكد ومسدد",
+          "تقارير العائد التشغيلي التي تبرز التوفير في الساعات وتكاليف الإدارة"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Populates automatically as your sales team handles inquiries and closes quotations.",
+      "ar": "تُحدَّث المؤشرات تلقائياً مع معالجة المبيعات للاستفسارات وإصدار عروض الأسعار.",
+      "summaryEn": "Populates automatically as your sales team handles inquiries and closes quotations.",
+      "summaryAr": "تُحدَّث المؤشرات تلقائياً مع معالجة المبيعات للاستفسارات وإصدار عروض الأسعار.",
+      "checklist": [
+        {
+          "id": "closed_quotes",
+          "en": "Active proposals created or sent in the Sales workspace",
+          "ar": "وجود عروض أسعار مسجلة أو مرسلة في قسم المبيعات",
+          "required": false
+        },
+        {
+          "id": "inbound_leads",
+          "en": "Inquiries processed through the inbox queue",
+          "ar": "استفسارات معالجة عبر صندوق الوارد",
+          "required": false
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Review operational trends or jump to the pipeline to address stalled proposals:",
+      "ar": "راجع اتجاهات الأداء التشغيلي أو انتقل لمسار المبيعات لتسريع العروض المعلقة:",
+      "summaryEn": "Review operational trends or jump to the pipeline to address stalled proposals:",
+      "summaryAr": "راجع اتجاهات الأداء التشغيلي أو انتقل لمسار المبيعات لتسريع العروض المعلقة:",
+      "links": [
+        {
+          "targetTab": "sales",
+          "targetSubTab": "pipeline",
+          "labelEn": "Inspect Pipeline Stages",
+          "labelAr": "مراجعة مراحل مسار المبيعات",
+          "hintEn": "Review pending quote decisions",
+          "hintAr": "متابعة العروض قيد اتخاذ القرار"
+        },
+        {
+          "targetTab": "dashboard",
+          "labelEn": "Return to Operations Desk",
+          "labelAr": "العودة للوحة العمليات",
+          "hintEn": "Morning mission control view",
+          "hintAr": "متابعة مهام اليوم والمغادرات"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "A first quote delivered in under 1 hour converts 3.2x more often than quotes sent after 12 hours.",
+        "Toggle the Operational ROI button to generate presentation-ready benchmarks for executive management."
+      ],
+      "ar": [
+        "تسليم أول عرض سعر خلال أقل من ساعة يرفع نسبة الإغلاق بمقدار 3.2 أضعاف مقارنة بالعروض المرسلة بعد 12 ساعة.",
+        "فعل زر إثبات العائد التشغيلي لعرض مقارنة فورية جاهزة لاجتماعات الإدارة العليا."
+      ]
+    }
+  },
+
+  "settings": {
+    "id": "settings",
+    "title": {
+      "en": "Company Governance, Staff & Permissions",
+      "ar": "إعدادات الشركة وحوكمة فريق العمل والصلاحيات"
+    },
+    "subtitle": {
+      "en": "Granular role management, company branding, VAT compliance, and system security",
+      "ar": "تخصيص المسميات الوظيفية بحرية كاملة، وتوزيع مستويات العرض والتحرير على كل قسم تشغيلي"
+    },
+    "badge": {
+      "en": "Governance & Setup",
+      "ar": "الحوكمة والإعداد"
+    },
+    "theme": "amber",
+    "purpose": {
+      "en": "Controls company-wide operational configuration: workspace business details, staff memberships, permission levels across all 16 modules, and comprehensive audit logs.",
+      "ar": "التحكم في الهوية التشغيلية للوكالة، بيانات السجل والترخيص السياحي، توزيع الصلاحيات الدقيقة على موظفي الأقسام، وسجل التدقيق الإداري.",
+      "keyDeliverables": {
+        "en": [
+          "Customizable staff roles with fine-grained View/Edit controls per department",
+          "Verified operational contact channels and company profile",
+          "Readiness progress tracker for full operational compliance"
+        ],
+        "ar": [
+          "مسميات وظيفية مخصصة مع ضبط دقيق لصلاحيات العرض أو التحرير لكل قسم",
+          "تسجيل بيانات التواصل وقنوات التشغيل والملف التعريفي للشركة",
+          "مؤشر الجاهزية التشغيلية لاستكمال كافة متطلبات العمل الميداني"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Requires Owner or Operations Director access privileges to manage roles and corporate settings:",
+      "ar": "يتطلب صلاحيات المالك أو مدير العمليات لتعديل بيانات المنظومة وتعيين الصلاحيات:",
+      "summaryEn": "Requires Owner or Operations Director access privileges to manage roles and corporate settings:",
+      "summaryAr": "يتطلب صلاحيات المالك أو مدير العمليات لتعديل بيانات المنظومة وتعيين الصلاحيات:",
+      "checklist": [
+        {
+          "id": "admin_access",
+          "en": "Logged-in user with Owner or Admin role",
+          "ar": "تسجيل الدخول بحساب مالك أو مدير نظام معتمد",
+          "required": true
+        },
+        {
+          "id": "operational_contacts",
+          "en": "Company operational contacts and dispatch channels at hand",
+          "ar": "توفر بيانات التواصل وقنوات التشغيل للمؤسسة",
+          "required": false
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "After updating roles and settings, configure operational tariffs or proceed to quoting:",
+      "ar": "بعد تهيئة الصلاحيات والإعدادات، انتقل لتهيئة الأسعار أو إنشاء عروض الأسعار:",
+      "summaryEn": "After updating roles and settings, configure operational tariffs or proceed to quoting:",
+      "summaryAr": "بعد تهيئة الصلاحيات والإعدادات، انتقل لتهيئة الأسعار أو إنشاء عروض الأسعار:",
+      "links": [
+        {
+          "targetTab": "library",
+          "labelEn": "Configure Tariffs & Suppliers",
+          "labelAr": "تهيئة الأسعار والموردين",
+          "hintEn": "Set base hotel contracts and transport",
+          "hintAr": "تسجيل عقود الفنادق وشركات النقل"
+        },
+        {
+          "targetTab": "dashboard",
+          "labelEn": "Return to Dashboard",
+          "labelAr": "العودة للوحة التحكم",
+          "hintEn": "Monitor live operational activities",
+          "hintAr": "متابعة النشاط التشغيلي اليومي"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Restrict junior staff to 'View Only' on pricing and margin formulas to prevent accidental contract exposure.",
+        "Export the company audit log regularly for internal compliance reviews."
+      ],
+      "ar": [
+        "حدد صلاحية 'عرض فقط' للموظفين الجدد في جداول الأسعار وهوامش الربح لمنع كشف العقود السرية.",
+        "قم بتصدير سجل التدقيق بانتظام لأرشفة كافة العمليات والتعديلات المنفذة."
+      ]
+    }
+  },
+
+  "team": {
+    "id": "team",
+    "title": {
+      "en": "Team Roster & Staff Permissions",
+      "ar": "فريق العمل وتوزيع الصلاحيات"
+    },
+    "subtitle": {
+      "en": "Granular role management and operational departmental access",
+      "ar": "إدارة أعضاء الفريق وتخصيص مستويات الوصول لكل قسم تشغيلي"
+    },
+    "badge": {
+      "en": "Team Permissions",
+      "ar": "صلاحيات الفريق"
+    },
+    "theme": "amber",
+    "purpose": {
+      "en": "Allows operators to add team members, assign operational departments (Sales, Operations, Field Guides, Accounting), and enforce least-privilege security.",
+      "ar": "يتيح إضافة موظفي الشركة، وتحديد الأقسام التشغيلية (المبيعات، العمليات، المرشدين، الحسابات)، وتطبيق سياسات الأمان.",
+      "keyDeliverables": {
+        "en": [
+          "Role and permission matrix per team member",
+          "Active / inactive staff status toggle",
+          "Audit trail of actions taken per user"
+        ],
+        "ar": [
+          "مصفوفة الصلاحيات والأدوار لكل فرد في الفريق",
+          "إمكانية تفعيل أو تجميد حساب الموظف فوراً",
+          "سجل متابعة الإجراءات التي نفذها كل موظف"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Requires Owner or Management account privileges.",
+      "ar": "يتطلب صلاحيات مدير أو مالك المنظومة.",
+      "summaryEn": "Requires Owner or Management account privileges.",
+      "summaryAr": "يتطلب صلاحيات مدير أو مالك المنظومة.",
+      "checklist": [
+        {
+          "id": "owner_perm",
+          "en": "Owner level access to manage team",
+          "ar": "صلاحية مالك لإدارة أعضاء الفريق",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Once team permissions are configured, assign team members to active trip files or inquiries:",
+      "ar": "بعد تحديد الصلاحيات، قم بتكليف الموظفين بالاستفسارات ومتابعة ملفات الرحلات:",
+      "summaryEn": "Once team permissions are configured, assign team members to active trip files or inquiries:",
+      "summaryAr": "بعد تحديد الصلاحيات، قم بتكليف الموظفين بالاستفسارات ومتابعة ملفات الرحلات:",
+      "links": [
+        {
+          "targetTab": "sales",
+          "targetSubTab": "inbox",
+          "labelEn": "Assign Incoming Leads",
+          "labelAr": "توزيع الاستفسارات الواردة",
+          "hintEn": "Delegate leads to sales specialists",
+          "hintAr": "إسناد الطلبات لمسؤولي المبيعات"
+        },
+        {
+          "targetTab": "trips",
+          "labelEn": "Assign Trip Coordinators",
+          "labelAr": "تعيين منسقي الرحلات",
+          "hintEn": "Attach staff to confirmed departures",
+          "hintAr": "ربط الموظفين بالرحلات المغادرة"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "Assign field representatives and drivers to 'Operations Only' to keep financial margins strictly private."
+      ],
+      "ar": [
+        "حدد صلاحيات مناديب المطار والسائقين لقسم العمليات فقط للحفاظ على خصوصية الأسعار وهوامش الربح."
+      ]
+    }
+  },
+
+  "plan": {
+    "id": "plan",
+    "title": {
+      "en": "Subscription Tiers & Plan Licensing",
+      "ar": "خطط وباقات اشتراك منظومة ريحال"
+    },
+    "subtitle": {
+      "en": "Choose and manage your agency DMC tier with instant tax invoices and wire transfer options",
+      "ar": "اختر الخطة المناسبة لحجم أعمال شركتك مع فواتير ضريبية إلكترونية معتمدة وسداد رسمي"
+    },
+    "badge": {
+      "en": "Plans & Licensing",
+      "ar": "الباقات والترخيص"
+    },
+    "theme": "gold",
+    "purpose": {
+      "en": "Manage your agency's RIHAL software subscription tier, unlock additional operator modules, and request official corporate e-invoices with designated tax identifiers.",
+      "ar": "إدارة ترخيص وباقة منظومة ريحال لشركتك، فتح الوحدات التشغيلية المتقدمة، وطلب الفواتير الضريبية المعتمدة.",
+      "keyDeliverables": {
+        "en": [
+          "Overview of plan limits (quotations per month, operational modules)",
+          "Direct corporate billing and official tax invoice dispatch via WhatsApp / email",
+          "Unlocking advanced fleet logistics, rooming lists, and pilgrimage desk"
+        ],
+        "ar": [
+          "نظرة شاملة على حدود الباقة (عدد العروض الشهرية، الوحدات المفعلة)",
+          "طلب الفواتير الضريبية الرسمية وتنسيق السداد عبر الواتساب والبريد",
+          "فتح وحدات النقل والأسطول وتسكين الفنادق ومنظومة الحج والعمرة"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Valid workspace registration and corporate billing contact details:",
+      "ar": "تسجيل بيانات الاتصال الرسمية للشركة وبيانات الفوترة:",
+      "summaryEn": "Valid workspace registration and corporate billing contact details:",
+      "summaryAr": "تسجيل بيانات الاتصال الرسمية للشركة وبيانات الفوترة:",
+      "checklist": [
+        {
+          "id": "workspace_name",
+          "en": "Official company commercial name registered in settings",
+          "ar": "الاسم التجاري الرسمي للشركة مسجل في الإعدادات",
+          "required": true
+        },
+        {
+          "id": "billing_contact",
+          "en": "Corporate billing email and finance contact phone",
+          "ar": "البريد الإلكتروني للفوترة وهاتف المتابعة المالية",
+          "required": false
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Proceed to activate your enterprise subscription plan or return to operational desks:",
+      "ar": "باشر تفعيل الباقة المطلوبة أو عد إلى لوحات العمليات اليومية:",
+      "summaryEn": "Proceed to activate your enterprise subscription plan or return to operational desks:",
+      "summaryAr": "باشر تفعيل الباقة المطلوبة أو عد إلى لوحات العمليات اليومية:",
+      "links": [
+        {
+          "targetTab": "settings",
+          "labelEn": "Review Company Details",
+          "labelAr": "مراجعة بيانات الشركة",
+          "hintEn": "Verify commercial registration & contacts",
+          "hintAr": "التأكد من السجل التجاري وأرقام التواصل"
+        },
+        {
+          "targetTab": "dashboard",
+          "labelEn": "Return to Dashboard",
+          "labelAr": "العودة للوحة التحكم",
+          "hintEn": "Continue normal daily operations",
+          "hintAr": "متابعة مهام العمل اليومية المعتادة"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "The Professional Inbound plan includes all 16 operational modules without monthly quotation caps."
+      ],
+      "ar": [
+        "باقة المشغل المتكامل (Professional Inbound) تشمل الـ 16 وحدة تشغيلية بالكامل بلا قيود على عروض الأسعار."
+      ]
+    }
+  },
+
+  "live_intel": {
+    "id": "live_intel",
+    "title": {
+      "en": "Live Destination Intelligence & Telemetry",
+      "ar": "معلومات المقاصد الحية والربط الميداني"
+    },
+    "subtitle": {
+      "en": "Real-time weather telemetry, currency FX safety buffers, prayer times, and traveler visa rules",
+      "ar": "قراءات الطقس الحية، هوامش أمان العملات، مواقيت الصلاة في الحرمين ومصر، وشروط التأشيرات"
+    },
+    "badge": {
+      "en": "Live Telemetry",
+      "ar": "المؤشرات الحية"
+    },
+    "theme": "indigo",
+    "purpose": {
+      "en": "Provides real-time situational awareness across Egyptian and Saudi pilgrimage destinations. Ensures tour dispatches, desert safaris, and Nile cruises operate safely with accurate local weather and FX protection.",
+      "ar": "يوفر رصداً حياً لظروف المقاصد السياحية في مصر والسعودية لحماية أفواج وسفاري الصحراء والكروزات، مع حماية أرباح العروض عبر أسعار الصرف الحية.",
+      "keyDeliverables": {
+        "en": [
+          "Live 5-day weather telemetry across Cairo, Luxor, Aswan, Sharm, Hurghada, and holy cities",
+          "Real-time Central Bank and market FX conversion with customizable buffer percentages",
+          "Live prayer schedules for Makkah, Madinah, and Cairo with Hijri dates"
+        ],
+        "ar": [
+          "قراءات الطقس لـ 5 أيام في القاهرة، الأقصر، أسوان، شرم الشيخ، الغردقة، ومكة والمدينة",
+          "أسعار صرف العملات الحية مع هامش أمان تقلبات السوق لحماية الأرباح",
+          "مواقيت الصلاة الدقيقة للحرمين والقاهرة مع التاريخ الهجري اللحظي"
+        ]
+      }
+    },
+    "prerequisites": {
+      "en": "Active internet telemetry connection to fetch official weather and banking feeds:",
+      "ar": "اتصال بالإنترنت لجلب قراءات محطات الأرصاد وبنوك الصرف الرسمية:",
+      "summaryEn": "Active internet telemetry connection to fetch official weather and banking feeds:",
+      "summaryAr": "اتصال بالإنترنت لجلب قراءات محطات الأرصاد وبنوك الصرف الرسمية:",
+      "checklist": [
+        {
+          "id": "online_connection",
+          "en": "Connected to network for live data sync",
+          "ar": "الاتصال بالشبكة لتحديث البيانات الفورية",
+          "required": true
+        }
+      ]
+    },
+    "nextSteps": {
+      "en": "Use live FX and weather conditions when building proposals or dispatching tours:",
+      "ar": "استعن بأسعار الصرف وقراءات الطقس عند إعداد العروض أو تحريك الرحلات:",
+      "summaryEn": "Use live FX and weather conditions when building proposals or dispatching tours:",
+      "summaryAr": "استعن بأسعار الصرف وقراءات الطقس عند إعداد العروض أو تحريك الرحلات:",
+      "links": [
+        {
+          "targetTab": "sales",
+          "targetSubTab": "quotes",
+          "labelEn": "Apply FX in Quotes",
+          "labelAr": "تطبيق الصرف في التسعير",
+          "hintEn": "Build quote with FX safety margins",
+          "hintAr": "إنشاء عرض سعر محمي من تقلبات الصرف"
+        },
+        {
+          "targetTab": "trips",
+          "labelEn": "Check Field Operations",
+          "labelAr": "متابعة التشغيل الميداني",
+          "hintEn": "Ensure tours match weather forecasts",
+          "hintAr": "مطابقة جداول الرحلات مع تنبيهات الطقس"
+        }
+      ]
+    },
+    "operatorTips": {
+      "en": [
+        "In extreme summer weather (Luxor/Aswan > 42°C), schedule Valley of the Kings visits early morning before 10 AM.",
+        "Always add a 3-5% safety buffer on foreign currencies to safeguard quotations against rapid devaluations."
+      ],
+      "ar": [
+        "في درجات الحرارة المرتفعة بالأقصر وأسوان صيفاً (> 42° مئوية)، جدول زيارات وادي الملوك في الصباح الباكر قبل الـ 10 صباحاً.",
+        "احرص دائماً على إضافة هامش أمان 3-5% على العملات الأجنبية لتأمين عروض الأسعار من تذبذبات الصرف المفاجئة."
+      ]
+    }
+  }
+}
+

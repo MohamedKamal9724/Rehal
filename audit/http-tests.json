@@ -1,0 +1,35 @@
+[
+  {
+    "path": "/health",
+    "status": 200,
+    "body": {
+      "status": "ok",
+      "service": "daleel",
+      "transactionsEnabled": false
+    }
+  },
+  {
+    "path": "/api/public/proposals/register",
+    "status": 503,
+    "body": {
+      "error": "SERVICE_NOT_READY",
+      "message": "الخدمة غير متاحة حاليًا. لم يتم إرسال أو حفظ الطلب."
+    }
+  },
+  {
+    "path": "/api/ai/parse-inquiry",
+    "status": 503,
+    "body": {
+      "error": "SERVICE_NOT_READY",
+      "message": "الخدمة غير متاحة حاليًا. لم يتم إرسال أو حفظ الطلب."
+    }
+  },
+  {
+    "path": "/api/google-maps/distance-matrix",
+    "status": 503,
+    "body": {
+      "error": "SERVICE_NOT_READY",
+      "message": "الخدمة غير متاحة حاليًا. لم يتم إرسال أو حفظ الطلب."
+    }
+  }
+]

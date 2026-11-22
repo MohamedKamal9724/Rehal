@@ -1,0 +1,415 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>دليل — التدقيق التقني والمنتج</title><style>
+:root{color-scheme:light}*{box-sizing:border-box}body{font-family:Tahoma,Arial,sans-serif;background:#f2f6f5;color:#173238;margin:0;line-height:1.9}main{max-width:1250px;margin:0 auto;background:#fff;padding:50px 58px}h1{font-size:34px;color:#075a56;border-bottom:5px solid #d0a34b;padding-bottom:18px}h2{font-size:24px;color:#075a56;margin-top:52px;border-bottom:1px solid #d8e4e0;padding-bottom:8px}p,li{font-size:16px}a{color:#086f86;overflow-wrap:anywhere}table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px;line-height:1.8}th{background:#075a56;color:white;padding:13px;text-align:right}td{border:1px solid #d7e2de;padding:12px;vertical-align:top}tr:nth-child(even){background:#f4f8f6}code{font-family:monospace;direction:ltr;unicode-bidi:embed;background:#eef3f2;overflow-wrap:anywhere;font-size:.9em}pre{direction:ltr;text-align:left;overflow:auto;background:#112f35;color:#e6f3ed;border-radius:10px;padding:20px;line-height:1.6}pre code{background:transparent;color:inherit;white-space:pre}blockquote{border-right:4px solid #d0a34b;padding:8px 20px;background:#fff8e8}.summary{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}.summary span{background:#e8f3ef;color:#075a56;padding:10px 18px;border-radius:7px}footer{margin-top:50px;border-top:1px solid #ccd9d4;color:#57716c;font-size:13px}@media(max-width:700px){main{padding:22px 16px}h1{font-size:27px}table{display:block;overflow-x:auto;min-width:0}td{min-width:130px}}@media print{body{background:#fff}main{max-width:none;padding:0}h2{break-after:avoid}tr{break-inside:avoid}pre{white-space:pre-wrap}a{color:inherit}}
+</style></head><body><main><div class="summary"><span>130 ملفًا في النسخة الأصلية</span><span>30 نتيجة تدقيق رئيسية</span><span>الحالة: تطوير محلي — غير جاهز للإطلاق</span></div><h1>دليل — تقرير التدقيق التقني والمنتج</h1>
+<p>تاريخ المراجعة: 22 أكتوبر 2026. المرجع: أحدث أرشيف مرفق، النسخة (2).</p>
+<h2>القرار التنفيذي</h2>
+<p><strong>التطبيق غير جاهز للإطلاق التجاري.</strong> النسخة المسلّمة نسخة معالجة للمخاطر وتطوير محلي، وليست نظام حجز مكتملًا. المشكلة الأساسية لم تكن الألوان: هوية المسافر كانت تُنشأ محليًا داخل مستخدمي الشركة، وقواعد قاعدة البيانات كانت تسمح للجميع بالقراءة والكتابة، وبعض الشاشات كانت تؤكد عمليات لم تحدث فعلًا.</p>
+<p>تم تعديل المصدر نفسه، وإضافة اختبارات انحدار، وتحديث ملف تثبيت الاعتماديات. لم يتم نشر التغييرات أو تعديل إعدادات Firebase الحية أو إرسال رسائل أو إجراء مدفوعات. إغلاق القواعد في الملفات لا يحمي مشروعًا منشورًا إلا بعد نشرها عليه.</p>
+<h2>نطاق المراجعة وحدودها</h2>
+<ul>
+<li>تم جرد ملفات الأرشيف ومراجعة نقاط الدخول والهوية والتخزين والمزامنة والتسعير والاستيراد والتصدير والشاشات المرتبطة بها. جدول مستقل <code>audit/file-review.csv</code> يسجل كل ملف وحالة تغييره وإشارات الفحص والاختبارات المطلوبة.</li>
+<li>القراءة والفحص الساكن لا يعادلان اختبار كل شاشة فعليًا. الملفات الثانوية موضحة كفحص ساكن، ولم تُوسم زورًا بأنها اختُبرت بصريًا.</li>
+<li>لم يتوفر مشروعان معدّان للمصادقة أو حسابات اختبار أو مفاتيح دفع. لذلك لم نختبر وصول البريد أو Google OAuth أو إلغاء جلسة من لوحة Firebase فعليًا.</li>
+<li>محاولة تشغيل Playwright تعثرت لغياب Chromium وفشل تنزيله. لا توجد لقطات شاشة معتمدة ولا ادعاء بمراجعة بصرية مكتملة. يلزم اختبار RTL ولوحة المفاتيح والموبايل قبل الإطلاق.</li>
+</ul>
+<h2>أهم المشاكل وما حدث لها</h2>
+<p><strong>P0:</strong> مانع إطلاق/كشف بيانات أو تجاوز هوية. <strong>P1:</strong> فقد بيانات أو نتائج مضللة أو خلل تشغيلي مؤثر. <strong>P2:</strong> جودة استخدام وصيانة وأداء. «متوقف» تعني منع السلوك الخاطئ، ولا تعني بناء الخدمة البديلة.</p>
+<table>
+<thead>
+<tr>
+<th>رقم</th>
+<th>الملف أو المسار</th>
+<th>المشكلة والأثر</th>
+<th>الخطورة</th>
+<th>الحل وحالة التنفيذ</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>A01</td>
+<td><code>firestore.rules</code></td>
+<td>السماح العام بالقراءة والكتابة، بما في ذلك المسار الشامل</td>
+<td>P0</td>
+<td>استبداله بـ deny-all وإضافة قواعد مستقلة للمسافر. <strong>احتواء منفذ</strong>؛ يلزم نشر القواعد ثم تصميم سياسات كل شركة ومستخدم قبل فتح الوصول.</td>
+</tr>
+<tr>
+<td>A02</td>
+<td><code>src/services/authService.ts</code>، <code>components/auth/AuthScreen.tsx</code></td>
+<td>فشل تفعيل مزود المصادقة كان يتحول إلى نجاح وهوية محلية</td>
+<td>P0</td>
+<td>حذف نجاح المحاكاة، وإحالة الشاشة القديمة إلى الدخول الآمن. <strong>منفذ</strong>.</td>
+</tr>
+<tr>
+<td>A03</td>
+<td><code>src/App.tsx</code> سابقًا، <code>src/OperatorApp.tsx</code> حاليًا</td>
+<td>حساب المسافر ضمن مستخدمي الشركة؛ التبديل بين الواجهات لم يكن فصل هوية</td>
+<td>P0</td>
+<td>نقطة دخول جديدة تحمل B2B بعد المصادقة فقط، Firebase app ومشروع مستقل لكل بوابة، جلسة session منفصلة. المسافر لا يقرأ repository الشركة. <strong>منفذ بالكود؛ اختبار مزودي الدخول باقٍ</strong>.</td>
+</tr>
+<tr>
+<td>A04</td>
+<td><code>src/App.tsx</code>، <code>src/lib/authRealms.ts</code></td>
+<td>إمكانية الوصول عبر query params وحساب Owner محلي</td>
+<td>P0</td>
+<td>فتح B2B يتطلب <code>workspaceId</code> و<code>role</code> من Firebase custom claims؛ لا تمنحها واجهة العميل. تنظيف معاملات العرض القديم. <strong>منفذ عند الدخول؛ صلاحيات العمليات الخادمية لم تُبنَ بعد</strong>.</td>
+</tr>
+<tr>
+<td>A05</td>
+<td><code>OperatorApp.tsx</code>، <code>portal/ClientPortalView.tsx</code></td>
+<td>كود غير مطابق يفتح أول رحلة أو عرض؛ بيانات عميل وهمي عند غياب الرابط</td>
+<td>P0</td>
+<td>إزالة fallback للرحلة الأولى، وإظهار رابط غير متاح بدل أي بيانات بديلة. بوابة المشاركة القديمة <strong>متوقفة</strong> حتى خدمة روابط خادمية.</td>
+</tr>
+<tr>
+<td>A06</td>
+<td><code>src/services/dbSync.ts</code></td>
+<td>تنزيل كل الرحلات لفحص كود، مزامنة بلا عزل، وابتلاع فشل الحفظ</td>
+<td>P0</td>
+<td>إزالة المزامنة الجماعية والتعبئة، وإيقاف الكتابة السحابية. <strong>متوقف</strong>؛ المطلوب API يستخرج الشركة من الهوية ويتحقق من ملكية كل سجل.</td>
+</tr>
+<tr>
+<td>A07</td>
+<td><code>server.ts</code></td>
+<td>APIs بلا مصادقة، تسجيل عرض بأسعار من العميل، تخزين رموز في الذاكرة، استهلاك AI مفتوح</td>
+<td>P0</td>
+<td>إزالة التنفيذ غير الآمن وإرجاع JSON 503 واضح، مع health endpoint ورؤوس أساسية. <strong>احتواء منفذ؛ API التجاري ما زال مطلوبًا</strong>.</td>
+</tr>
+<tr>
+<td>A08</td>
+<td><code>src/lib/storage.ts</code></td>
+<td>قراءة الاستفسارات تحذف أسماء مثل Elena/Smith وبيانات الشركات الأخرى وتكتب النتيجة</td>
+<td>P1</td>
+<td>القراءة تصفي القيمة المعادة فقط، ولا تعدل المصدر. اختبار يحافظ على الأسماء وعلى الشركة الأخرى. <strong>منفذ</strong>.</td>
+</tr>
+<tr>
+<td>A09</td>
+<td><code>src/lib/storage.ts</code></td>
+<td>إعادة التهيئة تحذف/تستبدل مساحة عمل اعتمادًا على اسمها</td>
+<td>P1</td>
+<td>لا حذف ولا إعادة تعبئة عند القراءة. <strong>منفذ</strong>. البيانات القديمة لم تُحذف تلقائيًا.</td>
+</tr>
+<tr>
+<td>A10</td>
+<td><code>sessionScope.ts</code>، <code>storage.ts</code>، <code>tripStore.ts</code>، <code>voucherService.ts</code>، <code>TravelerMobileConcierge.tsx</code></td>
+<td>بيانات خاصة مخزنة تحت مفاتيح مشتركة بين الحسابات</td>
+<td>P1</td>
+<td>فصل cache حسب المشروع والشركة والمستخدم؛ لا قراءة تلقائية للمفاتيح القديمة. <strong>منفذ</strong>. localStorage ليس حدًا أمنيًا ولا قاعدة بيانات متعددة الأجهزة.</td>
+</tr>
+<tr>
+<td>A11</td>
+<td><code>demoData.ts</code>، <code>agenciesData.ts</code>، <code>hajjUmrahData.ts</code>، <code>tripStore.ts</code>، <code>upsellService.ts</code></td>
+<td>رحلات وأسعار وموردون وبرامج وإضافات تتولد تلقائيًا</td>
+<td>P1</td>
+<td>إفراغ مخزون البيع الافتراضي ومنع إنشاء رحلة حج وهمية. <strong>منفذ</strong>؛ أسماء الأماكن والقوالب الجغرافية ليست مخزونًا مؤكدًا ويجب تمييزها في المنتج.</td>
+</tr>
+<tr>
+<td>A12</td>
+<td><code>agency/AgencyShowcaseView.tsx</code>، <code>BrowseCompaniesView.tsx</code>، <code>OperatorApp.tsx</code></td>
+<td>تقييمات وعدد مراجعات وشارات اعتماد غير حقيقية</td>
+<td>P1</td>
+<td>عرض بيانات الشركة الفعلية فقط؛ دليل الشركات فارغ حتى النشر المعتمد؛ لا شارة تحقق تلقائية. <strong>منفذ</strong>.</td>
+</tr>
+<tr>
+<td>A13</td>
+<td><code>onboarding/WorkspaceOnboardingGate.tsx</code>، <code>WorkspaceOnboardingWizard.tsx</code>، <code>common/MissingFieldsModal.tsx</code>، <code>lib/readiness.ts</code></td>
+<td>طلب تراخيص وضريبة وبنوك كشرط للبدء</td>
+<td>P1</td>
+<td>إعداد مختصر للاسم والتواصل؛ لا مستندات رسمية ولا شرط بنكي للدخول. <strong>منفذ</strong>. readiness تخص إعداد العمل وليست شهادة جاهزية للإطلاق.</td>
+</tr>
+<tr>
+<td>A14</td>
+<td><code>agency/AgencyProfileEditor.tsx</code>، <code>TeamSettingsView.tsx</code>، <code>hajj/HajjUmrahView.tsx</code></td>
+<td>حقول حساسة ودعوات/صلاحيات محلية وهمية</td>
+<td>P1</td>
+<td>ملف شركة مبسط، عرض صلاحيات دون منحها من المتصفح، إيقاف تسجيل الحج والمستندات. <strong>منفذ/متوقف حسب الوحدة</strong>. بعض خصائص الأنواع القديمة باقية للتوافق ولا تمثل مدخلات نشطة.</td>
+</tr>
+<tr>
+<td>A15</td>
+<td><code>ingestion/RateIngestionModal.tsx</code>، <code>ExcelColumnMapperModal.tsx</code>، <code>PdfReviewSplitPane.tsx</code></td>
+<td>الملف غير القابل للقراءة أو PDF/XLSX يتحول لأسعار جاهزة؛ ربط بمورد غير صحيح</td>
+<td>P1</td>
+<td>CSV حقيقي مع فحص المورد داخل الشركة والعملات والأرقام والتواريخ، حد حجم وصفوف، ومعاينة قبل الحفظ. رفض الصيغ غير المدعومة. <strong>منفذ</strong>.</td>
+</tr>
+<tr>
+<td>A16</td>
+<td><code>SubscriptionPlanView.tsx</code></td>
+<td>جمع بيانات بطاقة ثم نجاح وإيصال بمحاكاة زمنية</td>
+<td>P0</td>
+<td>حذف واجهة البطاقة والدفع الوهمي. <strong>متوقف</strong> حتى hosted checkout وwebhook موثق وحالات دفع خادمية.</td>
+</tr>
+<tr>
+<td>A17</td>
+<td><code>portal/PublicTripRequestForm.tsx</code></td>
+<td>طلب محلي يوحي بوصوله للشركة أو بإنشاء حجز</td>
+<td>P1</td>
+<td>منع الإرسال الوهمي برسالة صريحة. <strong>متوقف</strong> حتى تسليم خادمي مع request ID وحالات فشل/إعادة محاولة.</td>
+</tr>
+<tr>
+<td>A18</td>
+<td><code>ProposalViewer.tsx</code></td>
+<td>احتساب مشاهدة 45 ثانية وأقسام كاملة دون قياس؛ قبول وهمي</td>
+<td>P1</td>
+<td>إزالة القياس المختلق ومنع قبول العرض في المعاينة. <strong>منفذ/متوقف</strong>؛ المطلوب أحداث حقيقية مع consent وسياسة احتفاظ.</td>
+</tr>
+<tr>
+<td>A19</td>
+<td><code>pricingEngine.ts</code></td>
+<td>تكلفة EGP مضخمة في نفس العملة، وخلط snapshot مع سعر صرف آخر وmarkup ثابت بوحدات مختلفة</td>
+<td>P1</td>
+<td>تكلفة دفترية spot؛ buffer مرة واحدة عند اختلاف العملة؛ markup ثابت بعملة العرض؛ البيع يرجع لنفس snapshot. <strong>منفذ ومختبر</strong>؛ اعتماد سياسة التسعير تجاريًا مطلوب.</td>
+</tr>
+<tr>
+<td>A20</td>
+<td><code>pricingEngine.ts</code></td>
+<td>تجاهل الرضع في سعة المركبة وعدم احترام حد طفل مجاني يساوي صفرًا</td>
+<td>P1</td>
+<td>إدخال الرضع في السعة وفحص <code>!== undefined</code> وعزل المدخلات السالبة/غير المحدودة. <strong>منفذ ومختبر</strong>.</td>
+</tr>
+<tr>
+<td>A21</td>
+<td><code>QuoteBuilderView.tsx</code></td>
+<td>معاينة تسجل Sent، عرض فارغ قابل للحفظ، ورمز مشاركة ضعيف</td>
+<td>P1</td>
+<td>حفظ Draft، اشتراط اسم وتاريخ وبنود ومجموع موجب، وعدم إصدار رمز مشاركة محلي. <strong>منفذ</strong>.</td>
+</tr>
+<tr>
+<td>A22</td>
+<td><code>QuoteBuilderView.tsx</code>، <code>pricingEngine.ts</code></td>
+<td>snapshot لا يُثبت عبر دورة حياة العرض؛ quick-add rate غير دائم؛ overrides تحتاج إبطالًا عند تغيير المدخلات؛ semantics الغرف غير محسومة</td>
+<td>P1</td>
+<td><strong>مفتوح</strong>: حفظ نسخة أسعار/FX مؤرخة لكل إصدار، تعريف تكلفة الغرفة مقابل الشخص، إعادة تسعير واضحة واعتماد فروق الإصدار. لا تعتمد العروض ماليًا قبل إغلاقه.</td>
+</tr>
+<tr>
+<td>A23</td>
+<td><code>safePrint.ts</code> وجميع مواضع <code>document.write</code></td>
+<td>طباعة HTML يحتوي مدخلات مستخدم مع احتمالات تنفيذ محتوى غير موثوق</td>
+<td>P1</td>
+<td>تمرير الطباعة عبر DOMPurify وسياسة تمنع السكربت والنماذج؛ إزالة أرقام تراخيص وضريبة وهمية من voucher/export. <strong>منفذ</strong>؛ اختبار XSS في متصفح والطباعة الفعلية باقٍ.</td>
+</tr>
+<tr>
+<td>A24</td>
+<td><code>storage.ts</code>، <code>TripOperationsView.tsx</code></td>
+<td>استعادة JSON بلا مخطط أو ملكية يمكنها تغيير مستخدم/شركة</td>
+<td>P1</td>
+<td>إيقاف الاستعادة غير الموثوقة، تصدير مساحة الحساب الحالية بدل كل مفاتيح المتصفح. <strong>احتواء منفذ</strong>؛ الاستعادة الآمنة مفتوحة.</td>
+</tr>
+<tr>
+<td>A25</td>
+<td><code>lib/firebase.ts</code>، <code>firebase-applet-config.json</code>، <code>maps/GoogleTripRouteMap.tsx</code></td>
+<td>ربط بمشروع سابق ومفتاح خرائط مضمن</td>
+<td>P1</td>
+<td>إعدادات بيئية فقط وإزالة المفتاح المضمن. <strong>منفذ في المصدر</strong>؛ مراجعة صلاحيات/قيود أي مفتاح قديم مهمة مالك المشروع.</td>
+</tr>
+<tr>
+<td>A26</td>
+<td><code>vercel.json</code>، <code>api/unavailable.ts</code></td>
+<td>إعادة توجيه API إلى HTML في نشر static</td>
+<td>P1</td>
+<td>توجيه API إلى استجابة عدم جاهزية JSON؛ Node server للتشغيل المحلي/الحاوية. <strong>منفذ بالكود</strong>؛ لم يُختبر نشر Vercel.</td>
+</tr>
+<tr>
+<td>A27</td>
+<td><code>package.json</code>، <code>package-lock.json</code></td>
+<td>ملف lock غير متزامن؛ <code>npm ci</code> يفشل</td>
+<td>P1</td>
+<td>تحديث الاعتماديات وlock؛ clean install نجح أثناء العمل. <strong>منفذ</strong>؛ لا يعني فحص سلسلة التوريد أو خلو الاعتماديات من الثغرات.</td>
+</tr>
+<tr>
+<td>A28</td>
+<td><code>App.tsx</code>، <code>portal.css</code>، <code>index.html</code></td>
+<td>دخول متداخل وبيانات استعراض ومحتوى B2B في واجهة المسافر</td>
+<td>P2</td>
+<td>واجهة عربية مستقلة، حالات تحميل/خطأ/فارغة، حقول معنونة وfocus وتقليل حركة، تغيير الاسم إلى دليل/Daleel. <strong>منفذ ساكنًا؛ التحقق البصري مفتوح</strong>.</td>
+</tr>
+<tr>
+<td>A29</td>
+<td><code>OperatorApp.tsx</code> وبقية الوحدات التشغيلية</td>
+<td>ملف رئيسي ومكونات كبيرة ومتداخلة وحزمة B2B كبيرة</td>
+<td>P2</td>
+<td>فصل نقطة المسافر وlazy loading لـB2B. <strong>جزئي</strong>؛ تقسيم تبويبات التشغيل وخدمات domain خطوة لاحقة.</td>
+</tr>
+<tr>
+<td>A30</td>
+<td><code>conciergeService.ts</code>، <code>voucherService.ts</code>، <code>roadmapDefaults.ts</code>، <code>tippingGuide.ts</code></td>
+<td>استنتاجات تلقائية عن الفنادق والمواصلات والمواعيد والاتصالات قد تبدو مؤكدة</td>
+<td>P1</td>
+<td>إزالة أبرز أسماء المرشد والسائق ولوحة المركبة الوهمية؛ <strong>جزئي</strong>. يلزم تحويل كل تفصيل تشغيلي إلى assigned/unknown ووسم التقديرات وعدم عرض تأكيد بلا مصدر.</td>
+</tr>
+</tbody></table>
+<h2>ما يعمل الآن وما لا يعمل</h2>
+<ul>
+<li>يعمل بعد الإعداد: تدفق دخول بالبريد برابط تحقق أو Google، وفصل بوابتي الهوية. لم يتم إرسال رسائل تحقق أثناء التدقيق.</li>
+<li>يعمل محليًا لمستخدم شركة له claims صحيحة: الواجهات التشغيلية المتبقية، التحرير المحلي، CSV والتحقق من الأسعار، التصدير والمعاينة. لا يوجد تزامن فريق موثوق.</li>
+<li>متوقف عمدًا: API التجاري، نشر شركات، قبول عروض من العميل، مشاركة رحلات عامة، استلام استفسارات عامة، الدفع، دعوات وصلاحيات من المتصفح، الاستعادة غير المتحققة، تسجيل الحج والعمرة والمستندات، واستخراج PDF/XLSX الوهمي.</li>
+<li>حساب المسافر يستطيع الدخول لكن ربط الحجوزات الفعلية غير مبني؛ لا تُعرض رحلات شركة محلية له.</li>
+<li>المشروع لا يجمع وثائق عبر مسار التسجيل الجديد. مخططات قديمة optional في <code>types/index.ts</code> وبعض أدوات التصدير الثانوية تحتاج تنظيفًا إضافيًا قبل إعادة تفعيل الوحدات القديمة. حذف مخطط قديم لا يحذف بيانات سبق تخزينها؛ يحتاج ذلك ترحيلًا ومراجعة منفصلة.</li>
+</ul>
+<h2>الأكواد المعدلة وكيف تطبقها</h2>
+<p>الأرشيف يحتوي المشروع كاملًا، وليس مقتطفات فقط. <code>audit/changes.patch</code> يوضح الفروق مع النسخة المرفقة، و<code>audit/changed-files.txt</code> قائمة الملفات المعدلة. استخدم المشروع في فرع تجريبي، ولا تطبّق الملف patch والمشروع الكامل معًا.</p>
+<p>المنع عند غياب الخدمة، من <code>server.ts</code>:</p>
+<pre><code class="language-ts">app.use(&#39;/api&#39;, (_req, res) =&gt; {
+  res.setHeader(&#39;Cache-Control&#39;, &#39;no-store&#39;);
+  res.status(503).json({
+    error: &#39;SERVICE_NOT_READY&#39;,
+    message: &#39;الخدمة غير متاحة حاليًا. لم يتم إرسال أو حفظ الطلب.&#39;
+  });
+});
+</code></pre>
+<p>عزل التخزين، من <code>sessionScope.ts</code>:</p>
+<pre><code class="language-ts">export function operatorStorageKey(key: string): string {
+  if (!scope) throw new Error(&#39;Operator session required&#39;);
+  return `daleel:operator:${scope}:${key.replace(/^qde_/, &#39;&#39;)}`;
+}
+</code></pre>
+<p>قراءة لا تتلف بيانات الآخرين، من <code>storage.ts</code>:</p>
+<pre><code class="language-ts">getInquiries(workspaceId: string): Inquiry[] {
+  const list = getStorageItem&lt;Inquiry[]&gt;(STORAGE_KEYS.INQUIRIES, []);
+  return list.filter(i =&gt; i.workspaceId === workspaceId);
+}
+</code></pre>
+<p>قواعد الإغلاق المؤقت، وليست قواعد تشغيل إنتاج:</p>
+<pre><code class="language-text">match /{document=**} { allow read, write: if false; }
+</code></pre>
+<p>لا يجوز استبدالها بـ allow-all لتجاوز خطأ شاشة. فتح القاعدة يتطلب سياسة ملكية واختبارات Emulator. استخدام Firebase مشروعين مستقلين يمنع اشتراك هوية المسافر والشركة؛ متغير <code>mode</code> يختار واجهة ولا يمنح صلاحية.</p>
+<h2>خطوات التشغيل</h2>
+<ol>
+<li>استخدم Node 22.14 أو أحدث متوافقًا مع متطلبات الاعتماديات، ثم <code>npm ci</code>.</li>
+<li>انسخ <code>.env.example</code> إلى <code>.env.local</code> لواجهة Vite، وأدخل بيانات مشروع Firebase منفصل لكل بوابة. هذه إعدادات عميل؛ لا تضع service account أو مفتاح AI سريًا داخل متغير VITE.</li>
+<li>فعّل Email Link وGoogle، واضبط Authorized Domains وعنوان الرجوع HTTPS لكل مشروع. رابط البريد يطلب تأكيد نفس البريد عند إكمال الدخول.</li>
+<li>أنشئ عضوية مشغّل حقيقية عبر Admin SDK آمن وأضف claims <code>workspaceId</code> و<code>role</code>. لا يوجد زر في العميل يمنح Owner. لا تستخدم مشروع Firebase القديم تلقائيًا.</li>
+<li>شغّل <code>npm run lint</code> ثم <code>npm test</code> ثم <code>npm run build</code>. للتطوير <code>npm run dev</code>؛ لتشغيل بناء Node استخدم <code>NODE_ENV=production npm start</code> وفق نظام التشغيل.</li>
+<li>قواعد Firestore تحتاج نشرًا إلى المشروع الصحيح. لا توجد حاجة لفتح Firestore لتشغيل المعاينة المحلية؛ جميع APIs التجارية مغلقة حاليًا.</li>
+<li>احتفظ بنسخة من بيانات الإصدار القديم قبل الترقية. لم نرحّل مفاتيح التخزين القديمة إلى الحساب الجديد لأن نسبتها لصاحب صحيح غير مضمونة.</li>
+</ol>
+<h2>سجل التحقق</h2>
+<ul>
+<li>TypeScript: تشغيل <code>tsc --noEmit</code>؛ السجل <code>audit/typecheck.txt</code>.</li>
+<li>اختبارات 17 حالة للتسعير/تفسير الاستفسار، و8 حالات انحدار للعزل/الحفظ/CSV/FX والسعة؛ بالإضافة إلى مجموعات الإضافات والحج وvoucher وconcierge. السجل النهائي <code>audit/tests.txt</code> هو المرجع للنتيجة.</li>
+<li>عُدلت التوقعات القديمة التي كانت تشترط كتالوجًا وهميًا أو طباعة رقم ترخيص/ضريبة. البيانات المصطنعة داخل اختبارات الحساب تظل fixtures للاختبار، وليست بيانات تُعبأ في الإنتاج.</li>
+<li>البناء: <code>audit/build.txt</code> مع تحذير حجم حزمة B2B المتبقي. لا يُفسَّر نجاح البناء بأنه جاهزية تشغيلية.</li>
+<li>HTTP محلي: <code>/health</code> يعمل، وثلاثة مسارات API قديمة تعيد 503 وJSON، ومسار واجهة الشركة يعيد التطبيق. التفاصيل <code>audit/http-tests.json</code>.</li>
+<li>غير منفذ: OAuth/Email end-to-end، Firestore Emulator، اختبارات اختراق، مدفوعات، نشر فعلي، استعادة نسخة احتياطية، تجربة Safari/iOS، ومراجعة بصرية فعلية. تنزيل Chromium فشل؛ هذا نقص في التحقق لا نتيجة نجاح.</li>
+</ul>
+<h2>خطة الجاهزية للإطلاق ومعايير القبول</h2>
+<table>
+<thead>
+<tr>
+<th>الأولوية</th>
+<th>العمل التالي</th>
+<th>معيار القبول</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>P0 / الهوية والبيانات</td>
+<td>Backend متعدد الشركات، verifyIdToken، عضويات server-side، RBAC لكل عملية، قاعدة بيانات دائمة</td>
+<td>حساب شركة A لا يقرأ أو يعدل سجل B بتغيير المعرف؛ المسافر لا يستقبل cost أو margin أو قائمة ضيوف الآخرين؛ اختبارات رفض واضحة.</td>
+</tr>
+<tr>
+<td>P0 / المسافر</td>
+<td>حفظ حساب مسافر أدنى وربط travelerId بالحجز؛ جلسات مستقلة ومحو بيانات الشاشة عند الخروج</td>
+<td>نفس البريد في البوابتين لا يمنح عضوية تلقائيًا؛ refresh والخروج والتبديل وانتهاء الجلسة مختبرة.</td>
+</tr>
+<tr>
+<td>P0 / الطلب والعرض</td>
+<td>طلب فعلي، quote version immutable، قواعد انتقال status، قبول idempotent</td>
+<td>لا يُعرض «تم الإرسال/القبول» إلا بعد نجاح خادمي؛ النقر المزدوج لا ينشئ طلبين؛ فشل الشبكة لا يفقد المسودة.</td>
+</tr>
+<tr>
+<td>P0 / المشاركة</td>
+<td>رمز عشوائي طويل محفوظ hashed، انتهاء وإلغاء، DTO محدود</td>
+<td>رمز خاطئ/منتهي لا يعيد أي رحلة؛ لا توجد تكلفة داخلية في Network أو HTML؛ لا يمكن enumerate الحجز.</td>
+</tr>
+<tr>
+<td>P0 / التسعير</td>
+<td>تثبيت FX ومصدره وتاريخه، تكلفة غرفة/شخص واضحة، rate versions، سياسة الأطفال والإضافات</td>
+<td>إعادة فتح نفس إصدار العرض تعطي المجموع نفسه؛ تغيير العملة أو العدد يبطل override غير المتوافق؛ لا تأكيد لسعر منتهي أو غير موجود.</td>
+</tr>
+<tr>
+<td>P0 / الدفع</td>
+<td>Hosted checkout، webhook signature، idempotency، reconciliation/refunds</td>
+<td>لا تدخل PAN/CVC إلى خادم دليل؛ redirect نجاح العميل لا يساوي Paid؛ إجمالي الطلب يحسبه الخادم.</td>
+</tr>
+<tr>
+<td>P1 / النزاهة</td>
+<td>migrations، schema validation، نسخ احتياطية واختبار restore وتعارض تعديلات</td>
+<td>استرجاع نسخة في بيئة اختبار دون تغيير صاحبها؛ أي فشل حفظ يظهر للمستخدم؛ إصداران متزامنان لا يطغى أحدهما على الآخر بصمت.</td>
+</tr>
+<tr>
+<td>P1 / الواجهة</td>
+<td>مراجعة 360/390/768/1440px، RTL/EN، tab/focus، قارئ شاشة، حالات offline/error/empty</td>
+<td>لا overflow أفقي؛ جميع النوافذ تحفظ وتستعيد focus؛ عناصر التحكم تعمل بالكيبورد؛ لا بيانات أو نجاح مختلق.</td>
+</tr>
+<tr>
+<td>P1 / التشغيل</td>
+<td>سجلات أخطاء بلا أسرار، مراقبة API، rate limits على المستخدم/IP، تنبيهات، سياسة احتفاظ وحذف حساب</td>
+<td>trace ID لكل فشل؛ لا بيانات حساسة في logs؛ تحديد دور الاستجابة وتوقيت التنبيه؛ حذف حساب قابل للتحقق.</td>
+</tr>
+<tr>
+<td>P2 / الأداء</td>
+<td>تقسيم تبويبات B2B، تحميل الخرائط عند الطلب، pagination</td>
+<td>قياس فعلي على موبايل وشبكة متوسطة؛ تحميل المسافر لا يحمل شيفرة لوحة التشغيل.</td>
+</tr>
+</tbody></table>
+<p>ابدأ بإطلاق تجريبي محدود بعد إغلاق P0، مع رحلات حقيقية قليلة ومراجعة يدوية. لا تجمع وحدات ERP وmarketplace والدفع والسياحة الدينية كلها في الإصدار الأول.</p>
+<h2>المنافسة: أين فرصة دليل؟</h2>
+<p>بحسب موقع Trio Travel الرسمي، منتجهم يعلن تشغيل الشركات والحسابات والتقارير وربط أنظمة الحجز وإدارة النقل والحج والعمرة. هذه معلومات تسويقية منشورة وليست اختبارًا مستقلًا لجودة التنفيذ. لم أجد في الصفحات التي راجعتها رقمًا موثقًا للعملاء يصلح للمقارنة.</p>
+<p>المصدر: <a href="https://trio-travel.com/">https://trio-travel.com/</a> و <a href="https://etolv.com/trio-travel.php?lang=en">https://etolv.com/trio-travel.php?lang=en</a> — تمت مراجعتهما في 22 أكتوبر 2026.</p>
+<p>لا يوجد دليل كافٍ لقول إن ميزة محددة «عندك ومش عندهم». الموجود في دليل الآن نواة واجهات لبناء العرض والبرنامج والتشغيل؛ أغلب رحلة المسافر الكاملة ما زالت تحتاج Backend. فرصة المنافسة المقترحة هي إنجاز رحلة العميل من طلب إلى عرض واضح إلى متابعة يومية، ثم قياس قيمتها مع الشركات الصغيرة، وليس الادعاء بتفوق ERP قبل وجود محاسبة موثوقة.</p>
+<table>
+<thead>
+<tr>
+<th>التجربة المقترحة</th>
+<th>لماذا قد يختارها العميل؟</th>
+<th>micro-interactions</th>
+<th>مقياس اختبار</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>طلب رحلة في 60–90 ثانية: وجهة، موعد، عدد، ميزانية اختيارية</td>
+<td>يقل الاحتكاك وتصل للشركة متطلبات مفهومة</td>
+<td>progress مختصر، حفظ مسودة، سؤال واحد عند نقص معلومة، رسائل خطأ بجانب الحقل</td>
+<td>اكتمال الطلب، زمن أول رد مؤهل</td>
+</tr>
+<tr>
+<td>عرض تفاعلي عربي/إنجليزي بإجمالي واضح وما يشمله</td>
+<td>يقل السؤال المتكرر وعدم الثقة</td>
+<td>تغيير عدد المسافرين يعطي فرق السعر قبل التأكيد؛ حالة السعر وتاريخ صلاحيته</td>
+<td>مشاهدة → قبول مؤهل، عدد رسائل التوضيح</td>
+</tr>
+<tr>
+<td>مشاركة برنامج مع مرافقين للتصويت على اختيارات محددة</td>
+<td>سبب طبيعي لدعوة أشخاص جدد</td>
+<td>رابط محدود الصلاحيات، تصويت دون كشف سعر الشركة أو بيانات الحجز</td>
+<td>نسبة المشاركات التي تنتج مستخدمًا فعليًا</td>
+</tr>
+<tr>
+<td>«يومي في الرحلة»: موعد ومكان التجمع وجهة اتصال معيّنة</td>
+<td>قيمة يومية بعد البيع</td>
+<td>إشعار تغيير برنامج موثق، إضافة للتقويم، مؤشر آخر تحديث، offline subset محدود</td>
+<td>فتح البرنامج أثناء الرحلة، انخفاض مكالمات الاستفسار</td>
+</tr>
+<tr>
+<td>WhatsApp بموافقة العميل وقوالب رسمية عند تفعيل التكامل</td>
+<td>القناة مألوفة محليًا وتسرع الرد</td>
+<td>فتح محادثة بنص جاهز دون إرسال تلقائي؛ لاحقًا delivery status حقيقي</td>
+<td>زمن الرد ونسبة إكمال الطلب، opt-out</td>
+</tr>
+<tr>
+<td>تنبيه للشركة بالعروض التي تحتاج متابعة دون قياس وهمي</td>
+<td>يربط المنتج بالمبيعات لا بالاستعراض</td>
+<td>مهمة متابعة واضحة، إيقافها تلقائيًا عند الرد، undo للإجراءات القابلة للعكس</td>
+<td>قبول العروض وزمن إعداد عرض صحيح</td>
+</tr>
+<tr>
+<td>تقييم بعد رحلة مكتملة وإحالة بعد اكتمال الخدمة</td>
+<td>ثقة قابلة للتحقق ونمو دون سبام</td>
+<td>طلب تقييم اختياري، مكافأة إحالة بعد تأكيد العملية وضبط الاحتيال</td>
+<td>مراجعات مرتبطة بحجوزات، تكلفة اكتساب وإحالات مؤهلة</td>
+</tr>
+</tbody></table>
+<p>هذه فرضيات منتج قابلة للاختبار، وليست وعود نمو. ابدأ بثلاث شركات فعلية ومجموعة مسافرين، وسجّل أسباب تعثر الطلب والاعتراض على العرض قبل بناء مزيد من الشاشات. لا تعتمد عدد الزيارات وحده؛ قِس الطلب المؤهل، سرعة العرض الصحيح، الحجز المؤكد، وعودة الشركة لاستخدام المنتج أسبوعيًا.</p>
+<h2>المراجع الفنية</h2>
+<ul>
+<li>Firebase Email Link: <a href="https://firebase.google.com/docs/auth/web/email-link-auth">https://firebase.google.com/docs/auth/web/email-link-auth</a></li>
+<li>ملف القواعد والتقسيم المقترح لا يدّعي امتثالًا قانونيًا؛ إزالة حقول المستندات استجابة لنطاق المنتج المطلوب، وليست رأيًا بأن شركات السياحة لا تحتاج تراخيص.</li>
+</ul>
+<footer>التقرير يصف المصدر المسلّم، ولا يثبت نشر الإصلاحات أو نجاح خدمات خارجية لم تُختبر.</footer></main></body></html>

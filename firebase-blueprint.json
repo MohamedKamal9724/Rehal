@@ -1,0 +1,72 @@
+{
+  "entities": {
+    "agency": {
+      "title": "Agency",
+      "description": "Tourism agency / DMC profile and operational credentials",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "arabicName": { "type": "string" },
+        "slug": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "coverImageUrl": { "type": "string" },
+        "tourismLicenseNumber": { "type": "string" },
+        "licenseClass": { "type": "string" },
+        "commercialRegistry": { "type": "string" },
+        "taxRegistrationNumber": { "type": "string" },
+        "whatsappNumber": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "name"]
+    },
+    "tripFile": {
+      "title": "TripFile",
+      "description": "Active DMC operations file for a tour group or individual travel booking",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "fileNumber": { "type": "string" },
+        "tourPasscode": { "type": "string" },
+        "travelerName": { "type": "string" },
+        "startDate": { "type": "string" },
+        "durationDays": { "type": "number" },
+        "status": { "type": "string" },
+        "guideName": { "type": "string" },
+        "driverName": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "fileNumber", "status"]
+    },
+    "inquiry": {
+      "title": "Inquiry",
+      "description": "Inbound travel RFP / group inquiry lead",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "travelerName": { "type": "string" },
+        "agencyId": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "travelerName"]
+    }
+  },
+  "firestore": {
+    "/agencies/{agencyId}": {
+      "schema": "agency",
+      "description": "DMC agency profiles, branding and credentials"
+    },
+    "/tripFiles/{tripId}": {
+      "schema": "tripFile",
+      "description": "Operational trip files"
+    },
+    "/inquiries/{inquiryId}": {
+      "schema": "inquiry",
+      "description": "Inbound partner inquiries and RFPs"
+    }
+  }
+}

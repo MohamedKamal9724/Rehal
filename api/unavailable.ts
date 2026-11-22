@@ -1,0 +1,1 @@
+export default function handler(_req: unknown, res: any) { res.setHeader('Cache-Control','no-store');res.status(503).json({error:'SERVICE_NOT_READY',message:'الخدمة غير متاحة حاليًا. لم يتم حفظ الطلب.'}); }

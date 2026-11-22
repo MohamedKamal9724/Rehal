@@ -1,11 +1,34 @@
-<div align="center">
+# دليل — Daleel
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+نسخة تدقيق ومعالجة مخاطر، وليست إصدارًا جاهزًا للإطلاق التجاري.
 
-  <h1>Built with AI Studio</h2>
+ابدأ بقراءة [AUDIT.md](AUDIT.md): المشاكل وحالة كل إصلاح، الاختبارات، الخدمات المتوقفة وخطة الجاهزية.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## التشغيل
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+```sh
+npm ci
+npm run lint
+npm test
+npm run build
+npm run dev
+```
 
-</div>
+انسخ إعدادات الواجهة من `.env.example` إلى `.env.local`. يلزم مشروع Firebase منفصل لكل من traveler وoperator، وتفعيل Email Link/Google وAuthorized Domains. حساب الشركة يحتاج custom claims `workspaceId` و`role` تُصدر من خادم موثوق؛ لا تمنح الواجهة صلاحيات.
+
+- `/`: المسافر.
+- `/?mode=operator`: الشركات.
+- `/health`: صحة خادم Node.
+- `/api/*`: استجابة 503 مقصودة حتى بناء API آمن؛ لا يوجد دفع أو مشاركة أو قبول حجز فعلي.
+
+بيانات الشركة الحالية محلية ومعزولة بمفاتيح لكل حساب؛ لا تتزامن مع فريق أو جهاز آخر. لا تستخدمها كسجل مالي إنتاجي. البيانات القديمة لم تُرحّل تلقائيًا ولم تُحذف. قواعد Firestore مغلقة في كلا الملفين وتحتاج نشرًا منفصلًا؛ لا تعِد فتح قواعد عامة.
+
+## ملفات التسليم
+
+- `AUDIT.md`: التقرير.
+- `audit/file-review.csv`: جرد ملف بملف ونطاق الفحص.
+- `audit/changes.patch`: التغييرات قياسًا إلى الأرشيف المرفق.
+- `audit/changed-files.txt`: الملفات المعدلة.
+- `audit/tests.txt`, `typecheck.txt`, `build.txt`, `http-tests.json`: أدلة التحقق.
+
+ملفات `docs/` السابقة توثيق تاريخي وقد تحتوي على خطط غير منفذة. التقرير الحالي يتقدم عليها عند التعارض.

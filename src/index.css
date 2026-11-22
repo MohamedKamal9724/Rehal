@@ -1,0 +1,734 @@
+@import "tailwindcss";
+
+@theme {
+  --color-espresso: #44200F;
+  --color-espresso-dark: #2A1409;
+  --color-espresso-light: #5C2D16;
+  --color-walnut: #795037;
+  --color-walnut-hover: #63402A;
+  --color-champagne: #C4A177;
+  --color-champagne-light: #DFC7A5;
+  --color-champagne-tint: #F7F1E7;
+  --color-sand: #EDE0CC;
+  --color-sand-subtle: #F6EFE3;
+  --color-ivory: #FAF7F2;
+  --color-surface: #FFFFFF;
+}
+
+@layer base {
+  :root {
+    --font-display: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-arabic: 'IBM Plex Sans Arabic', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* RIHAL Approved Brand Palette Design Tokens */
+    --rihal-espresso: #44200F;
+    --rihal-espresso-dark: #2A1409;
+    --rihal-espresso-light: #5C2D16;
+    --rihal-walnut: #795037;
+    --rihal-walnut-hover: #63402A;
+    --rihal-champagne: #C4A177;
+    --rihal-champagne-light: #DFC7A5;
+    --rihal-champagne-tint: #F7F1E7;
+    --rihal-sand: #EDE0CC;
+    --rihal-sand-subtle: #F6EFE3;
+    --rihal-ivory: #FAF7F2;
+    --rihal-surface: #FFFFFF;
+
+    /* System & Component Mapping */
+    --brand-primary: #44200F;       /* Primary Espresso */
+    --brand-primary-light: #5C2D16;
+    --brand-accent: #795037;        /* Secondary Walnut */
+    --brand-accent-hover: #63402A;
+    --brand-accent-tint: #FAF7F2;
+    --brand-gold: #C4A177;          /* Accent Champagne */
+    --brand-gold-hover: #B38E64;
+    --brand-gold-tint: #F7F1E7;
+    --brand-bg: #FAF7F2;            /* Main Ivory Canvas */
+    --brand-surface: #FFFFFF;       /* White Surface */
+    --brand-surface-subtle: #F6EFE3;/* Soft Sand Subtle */
+    --brand-border: #EDE0CC;        /* Soft Sand Border */
+    --brand-border-subtle: #F6EFE3;
+    --brand-text: #2A1409;          /* Deep Espresso Ink */
+    --brand-text-muted: #795037;    /* Walnut Muted */
+
+    /* Distinct Semantic Functional Statuses */
+    --brand-success: #15803D;
+    --brand-success-bg: #F0FDF4;
+    --brand-warning: #B45309;
+    --brand-warning-bg: #FFFBEB;
+    --brand-danger: #DC2626;
+    --brand-danger-bg: #FEF2F2;
+    --brand-info: #0369A1;
+    --brand-info-bg: #F0F9FF;
+
+    /* Surfaces & Card Tokens */
+    --surface-canvas: #FAF7F2;
+    --surface-card: #FFFFFF;
+    --surface-white: #FFFFFF;
+    --accent-gold-primary: #C4A177;
+    --accent-gold-light: #DFC7A5;
+    --accent-gold-dark: #795037;
+    --accent-gold-subtle: #F7F1E7;
+    --accent-gold-border: #EDE0CC;
+    --ink-deep-slate: #2A1409;
+    --ink-header-navy: #44200F;
+    --ink-muted-slate: #795037;
+    --ink-border-limestone: #EDE0CC;
+  }
+
+  [dir="rtl"] {
+    font-family: var(--font-arabic);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: #FAF7F2;
+    color: #2A1409;
+    font-feature-settings: "cv02" 1, "cv03" 1, "cv04" 1, "cv11" 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  .font-arabic {
+    font-family: var(--font-arabic);
+  }
+
+  .font-mono, [data-mono="true"] {
+    font-family: var(--font-mono);
+  }
+
+  /* Strict tabular figures for data alignment */
+  .tabular-nums, td, th, [data-tabular="true"] {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Islamic Geometric Motif Pattern Utility */
+.islamic-pattern-bg {
+  background-color: #0f2035;
+  background-image: radial-gradient(rgba(217, 119, 6, 0.18) 1.5px, transparent 1.5px), radial-gradient(rgba(2, 132, 199, 0.15) 1.5px, transparent 1.5px);
+  background-size: 32px 32px;
+  background-position: 0 0, 16px 16px;
+}
+
+.islamic-arabesque-gold {
+  background: radial-gradient(circle at 50% 50%, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
+}
+
+@keyframes ambientPulse {
+  0%, 100% { opacity: 0.7; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.03); }
+}
+
+.animate-ambient-glow {
+  animation: ambientPulse 4s ease-in-out infinite;
+}
+
+/* Geometric Islamic Motif & Ambient Shimmer Keyframes */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+@keyframes islamicFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-5px) rotate(1deg); }
+}
+
+.animate-gold-shimmer {
+  background: linear-gradient(90deg, rgba(217, 119, 6, 0.1) 0%, rgba(245, 158, 11, 0.35) 50%, rgba(217, 119, 6, 0.1) 100%);
+  background-size: 200% 100%;
+  animation: goldShimmer 6s linear infinite;
+}
+
+.animate-islamic-float {
+  animation: islamicFloat 8s ease-in-out infinite;
+}
+
+/* Luxury Score & Progress Badges */
+.mediterranean-score-badge {
+  background-color: var(--brand-accent);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(2, 132, 199, 0.25);
+}
+
+.amber-score-badge {
+  background-color: var(--brand-gold);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 1px 3px rgba(217, 119, 6, 0.25);
+}
+
+/* Elegant micro-scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94A3B8;
+}
+
+/* Executive Motion & Smoothness Tokens */
+:root {
+  --ease-executive: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --duration-instant: 90ms;
+  --duration-micro: 140ms;
+  --duration-executive: 180ms;
+  --duration-smooth: 240ms;
+}
+
+/* Button & interactive smoothing */
+button, a, input, select, textarea {
+  transition-property: color, background-color, border-color, opacity, box-shadow, transform;
+  transition-duration: var(--duration-executive);
+  transition-timing-function: var(--ease-executive);
+}
+
+button:active:not(:disabled) {
+  transform: scale(0.98) translateY(0.5px);
+}
+
+/* Tactile micro-button */
+.btn-tactile {
+  transition: all var(--duration-executive) var(--ease-executive);
+  will-change: transform, box-shadow;
+}
+
+.btn-tactile:hover {
+  transform: translateY(-1px);
+}
+
+.btn-tactile:active:not(:disabled) {
+  transform: scale(0.975) translateY(0.5px);
+}
+
+/* Human-crafted card lift with subtle layered ambient shadow (Non-AI) */
+.card-lift {
+  transition: transform var(--duration-executive) var(--ease-executive),
+              box-shadow var(--duration-executive) var(--ease-executive),
+              border-color var(--duration-executive) var(--ease-executive);
+  will-change: transform, box-shadow;
+}
+
+.card-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 53, 128, 0.07), 0 4px 10px -2px rgba(0, 0, 0, 0.03);
+}
+
+/* Real breathing telemetry beacon */
+@keyframes radarPing {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+
+.radar-beacon {
+  position: relative;
+  display: inline-flex;
+}
+
+.radar-beacon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background-color: currentColor;
+  animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* High-craft editorial table row transition */
+.table-row-hover {
+  transition: background-color var(--duration-micro) var(--ease-executive),
+              border-color var(--duration-micro) var(--ease-executive);
+}
+
+.table-row-hover:hover {
+  background-color: #f8fafd;
+}
+
+/* Smooth modal zoom & slide entrance */
+@keyframes modalSlideZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.97) translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+.animate-modal-enter {
+  animation: modalSlideZoom var(--duration-smooth) var(--ease-executive) both;
+  will-change: opacity, transform;
+}
+
+/* Subtly animated gradient border highlight */
+@keyframes goldPulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 0 1px rgba(255, 183, 0, 0.4), 0 2px 8px rgba(255, 183, 0, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 0 2px rgba(255, 183, 0, 0.7), 0 4px 14px rgba(255, 183, 0, 0.25);
+  }
+}
+
+.pulse-gold-highlight {
+  animation: goldPulseGlow 2.5s ease-in-out infinite;
+}
+
+/* Subtle Interactive Badge Hover */
+.executive-badge {
+  transition-property: background-color, border-color, color, transform;
+  transition-duration: var(--duration-micro);
+  transition-timing-function: var(--ease-executive);
+}
+
+.executive-badge:hover {
+  transform: translateY(-0.5px);
+}
+
+/* Subtle Executive Fade & Slide-Up Entry Animation */
+@keyframes executiveFadeSlideUp {
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-executive-entry {
+  animation: executiveFadeSlideUp var(--duration-executive) var(--ease-executive) both;
+  will-change: opacity, transform;
+}
+
+/* Egyptian Luxury Gold Shimmer Effect for Executive Skeletons */
+@keyframes executiveGoldShimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.executive-shimmer-sweep {
+  position: relative;
+  overflow: hidden;
+  background-color: #F5EFE6;
+}
+
+.executive-shimmer-sweep::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(197, 160, 89, 0.14) 45%,
+    rgba(212, 175, 55, 0.22) 50%,
+    rgba(197, 160, 89, 0.14) 55%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: executiveGoldShimmer 1.8s infinite cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Strict Reduced Motion Accessibility Guard */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  @page {
+    margin: 10mm 12mm;
+    size: A4 portrait;
+  }
+  body {
+    background-color: white !important;
+    color: #0f172a !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  .print\:hidden {
+    display: none !important;
+  }
+  .print\:block {
+    display: block !important;
+  }
+  .print\:shadow-none {
+    box-shadow: none !important;
+  }
+  .print\:border-slate-300 {
+    border-color: #cbd5e1 !important;
+  }
+  .print\:border-b-0 {
+    border-bottom-width: 0 !important;
+  }
+  .print\:bg-white {
+    background-color: #ffffff !important;
+  }
+  .print\:px-0 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  .print\:py-4 {
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
+  }
+  .print\:py-6 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
+  }
+  .print\:break-inside-avoid {
+    break-inside: avoid !important;
+    page-break-inside: avoid !important;
+  }
+  a[href]::after {
+    content: "" !important;
+  }
+}
+
+/* =========================================================================
+   Standardized Luxury Icon Containers Set (Brand Aligned)
+   Consistent corner rounding (10px / 12px / 14px / 16px), subtle layered shadows,
+   crisp borders, and luxury Egyptian hospitality palette
+   ========================================================================= */
+.luxury-icon-box {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.75rem; /* rounded-xl (12px) - standardized default */
+  box-shadow: 0 1px 3px rgba(68, 32, 15, 0.06), 0 1px 2px rgba(0, 0, 0, 0.04);
+  transition: all var(--duration-executive) var(--ease-executive);
+  flex-shrink: 0;
+  box-sizing: border-box;
+}
+
+.luxury-icon-box:hover {
+  box-shadow: 0 2px 6px rgba(68, 32, 15, 0.1), 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Standardized Icon Box Sizes */
+.luxury-icon-box-xs {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 0.375rem; /* 6px */
+}
+
+.luxury-icon-box-sm {
+  width: 1.875rem; /* 30px */
+  height: 1.875rem;
+  border-radius: 0.5625rem; /* 9px */
+}
+
+.luxury-icon-box-md {
+  width: 2.25rem; /* 36px */
+  height: 2.25rem;
+  border-radius: 0.6875rem; /* 11px */
+}
+
+.luxury-icon-box-lg {
+  width: 2.5rem; /* 40px */
+  height: 2.5rem;
+  border-radius: 0.75rem; /* 12px */
+}
+
+.luxury-icon-box-xl {
+  width: 3rem; /* 48px */
+  height: 3rem;
+  border-radius: 0.875rem; /* 14px */
+}
+
+/* Standardized Brand Color Variants */
+.luxury-icon-box-primary,
+.luxury-icon-box-espresso {
+  background: linear-gradient(135deg, #44200F 0%, #2A1409 100%);
+  color: #C4A177;
+  border: 1px solid rgba(196, 161, 119, 0.35);
+  box-shadow: 0 2px 6px rgba(42, 20, 9, 0.15), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.luxury-icon-box-gold {
+  background: linear-gradient(135deg, #FFFDF9 0%, #F5EADB 100%);
+  color: #795037;
+  border: 1px solid rgba(196, 161, 119, 0.5);
+  box-shadow: 0 1px 3px rgba(121, 80, 55, 0.08);
+}
+
+.luxury-icon-box-sand {
+  background: #FAF7F2;
+  color: #44200F;
+  border: 1px solid #EDE0CC;
+  box-shadow: 0 1px 2px rgba(42, 20, 9, 0.04);
+}
+
+.luxury-icon-box-emerald {
+  background: linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%);
+  color: #15803D;
+  border: 1px solid rgba(134, 239, 172, 0.7);
+  box-shadow: 0 1px 3px rgba(21, 128, 61, 0.08);
+}
+
+.luxury-icon-box-amber {
+  background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%);
+  color: #B45309;
+  border: 1px solid rgba(252, 211, 77, 0.7);
+  box-shadow: 0 1px 3px rgba(180, 83, 9, 0.08);
+}
+
+.luxury-icon-box-sky,
+.luxury-icon-box-blue {
+  background: linear-gradient(135deg, #F0F9FF 0%, #E0F2FE 100%);
+  color: #0369A1;
+  border: 1px solid rgba(125, 211, 252, 0.7);
+  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.08);
+}
+
+.luxury-icon-box-rose,
+.luxury-icon-box-red {
+  background: linear-gradient(135deg, #FFF1F2 0%, #FFE4E6 100%);
+  color: #BE123C;
+  border: 1px solid rgba(253, 164, 175, 0.7);
+  box-shadow: 0 1px 3px rgba(190, 18, 60, 0.08);
+}
+
+.luxury-icon-box-purple,
+.luxury-icon-box-violet {
+  background: linear-gradient(135deg, #FAF5FF 0%, #F3E8FF 100%);
+  color: #7E22CE;
+  border: 1px solid rgba(216, 180, 254, 0.7);
+  box-shadow: 0 1px 3px rgba(126, 34, 206, 0.08);
+}
+
+/* =========================================================================
+   Standardized Luxury Content Boxes & Mobile Harmony System
+   Guarantees:
+   1. Uniform height across paired or stacked boxes (h-full + min-height standards)
+   2. Consistent icon container dimensions with zero distortion on mobile (shrink-0)
+   3. Graceful single/two-line typography with truncation and ellipsis to prevent box stretching
+   4. Equal-width and equal-height flex/grid layouts across all viewports
+   ========================================================================= */
+
+.luxury-content-box {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem; /* 10px */
+  padding: 0.625rem 0.75rem; /* 10px 12px */
+  background: #FAF7F2;
+  border: 1px solid #EDE0CC;
+  border-radius: 0.875rem; /* 14px */
+  box-shadow: 0 1px 2px rgba(68, 32, 15, 0.04);
+  transition: all var(--duration-executive) var(--ease-executive);
+  min-height: 3.5rem; /* 56px standard height */
+  height: 100%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.luxury-content-box-sm {
+  min-height: 3.25rem; /* 52px */
+  height: 100%;
+  padding: 0.5rem 0.625rem;
+  border-radius: 0.75rem; /* 12px */
+}
+
+.luxury-content-box-lg {
+  min-height: 4.25rem; /* 68px */
+  height: 100%;
+  padding: 0.75rem 1rem;
+  border-radius: 1rem; /* 16px */
+}
+
+/* Mobile Paired Box Container: Forces equal heights for adjacent boxes */
+.luxury-box-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  align-items: stretch;
+  gap: 0.5rem;
+}
+
+@media (max-width: 640px) {
+  .luxury-box-grid-stack-mobile {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Safe typography clamps to eliminate asymmetric box expansion on mobile */
+.luxury-box-title {
+  font-size: 0.625rem; /* 10px */
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #795037;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.1;
+  display: block;
+}
+
+.luxury-box-value {
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  color: #1E293B;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.25;
+  margin-top: 0.125rem;
+  display: block;
+}
+
+/* Enforce strict symmetry on icon-text pairs inside buttons and cards */
+.luxury-metric-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100%;
+  min-height: 4.25rem;
+  padding: 0.5rem 0.375rem;
+  border-radius: 1rem;
+  box-sizing: border-box;
+}
+
+/* =========================================================================
+   Standardized Luxury Nav Pills & Tab Buttons (Equal Height & Non-Wrapping)
+   Fixes mobile text splitting, uneven button heights, and misaligned floating icons
+   ========================================================================= */
+
+.luxury-tab-bar {
+  display: flex;
+  align-items: stretch;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  gap: 0.5rem;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  width: 100%;
+  padding-bottom: 0.125rem;
+}
+.luxury-tab-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.luxury-nav-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 2.5rem; /* 40px standardized uniform height across all viewports */
+  min-height: 2.5rem;
+  max-height: 2.5rem;
+  padding: 0 0.875rem;
+  border-radius: 0.75rem; /* 12px */
+  font-size: 0.75rem; /* 12px */
+  font-weight: 700;
+  white-space: nowrap;
+  flex-shrink: 0;
+  box-sizing: border-box;
+  line-height: 1;
+  transition: all var(--duration-executive) var(--ease-executive);
+  cursor: pointer;
+  user-select: none;
+}
+
+.luxury-nav-pill:active {
+  transform: scale(0.975);
+}
+
+.luxury-nav-pill-active {
+  background: #44200F;
+  color: #FAF7F2;
+  border: 1px solid #44200F;
+  box-shadow: 0 1px 3px rgba(68, 32, 15, 0.15), 0 1px 2px rgba(0, 0, 0, 0.08);
+}
+
+.luxury-nav-pill-inactive {
+  background: #FAF7F2;
+  color: #795037;
+  border: 1px solid #EDE0CC;
+  box-shadow: 0 1px 2px rgba(68, 32, 15, 0.04);
+}
+
+.luxury-nav-pill-inactive:hover {
+  background: #F3EAE0;
+  color: #44200F;
+  border-color: #C4A177;
+}
+
+/* Micro Icon Inside Nav Pill - Always centered, vertically balanced */
+.luxury-nav-pill-icon {
+  width: 1rem; /* 16px */
+  height: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #C4A177;
+}
+
+.luxury-nav-pill-active .luxury-nav-pill-icon {
+  color: #C4A177;
+}
+
+.luxury-nav-pill-inactive .luxury-nav-pill-icon {
+  color: #795037;
+}
+
+
+/* Audit evidence is not application content. */
+@source not "../audit";
+@source not "../docs";
+@source not "../AUDIT.md";
+

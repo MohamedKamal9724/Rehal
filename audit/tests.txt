@@ -1,0 +1,88 @@
+npm warn Unknown env config "http-proxy". This will stop working in the next major version of npm.
+
+> daleel@0.0.0 test
+> node --import tsx src/lib/pricingEngine.test.ts && node --import tsx --test src/lib/auditRegression.test.ts && node --import tsx src/lib/upsellService.test.ts && node --import tsx src/lib/hajjUmrahService.test.ts && node --import tsx src/lib/voucherService.test.ts && node --import tsx src/lib/conciergeService.test.ts
+
+  ok   per_person, quantity 1 (one day/visit): 2 adults x 100 USD = 200 USD
+  ok   AI draft does not square the adult count (2 adults, 100 USD ticket)
+  ok   AI draft: one hotel night per day except departure day
+  ok   AI draft: no rate in that city => Rate missing line, never another city's price
+  ok   AI draft: Giza uses Cairo-market rates
+  ok   AI draft: line ids are unique
+  ok   AI draft: rate expiring before day 2 flags only that day
+  ok   children: under free age free, discounted otherwise
+  ok   rate not valid on travel date => Expired rate
+  ok   rate valid on travel date => OK (even if "today" is later)
+  ok   missing rate => Rate missing
+  ok   totals: expired or missing lines block dispatch
+  ok   margin vs markup: 25% markup = 20% margin
+  ok   markupForTargetMargin: 20% margin needs 25% markup
+  ok   repriceLine follows a group change and keeps the line markup
+Backend AI service call skipped or unavailable, using client intelligent parsing pipeline Error: offline
+    at globalThis.fetch (/workspace/scratch/742c2fd517ea/daleel-audit/src/lib/pricingEngine.test.ts:119:51)
+    at parseInquiryWithAi (/workspace/scratch/742c2fd517ea/daleel-audit/src/lib/gemini.ts:25:28)
+    at <anonymous> (/workspace/scratch/742c2fd517ea/daleel-audit/src/lib/pricingEngine.test.ts:120:19)
+    at async <anonymous> (/workspace/scratch/742c2fd517ea/daleel-audit/src/lib/pricingEngine.test.ts:137:11)
+  ok   fallback parser never invents name, dates, nationality or budget
+  ok   sanitizer masks passports and card numbers
+
+17/17 passed
+✔ storage requires a session and isolates users/workspaces (1.252178ms)
+✔ reading empty repositories never seeds fictional trips or supplier rates (0.696209ms)
+✔ reading inquiries preserves other workspaces and real customer names (0.254614ms)
+✔ invalid restores do not modify storage (0.145179ms)
+✔ CSV handles quotes/newlines and rejects truncated quotes (0.246472ms)
+✔ CSV validates ownership, finite prices and real dates (1.41974ms)
+✔ same-currency conversion has no phantom FX margin; cross-currency buffer occurs once (0.325391ms)
+✔ capacity includes infants; zero-age free-child policy is valid (0.635207ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 8
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 138.045065
+Testing Upsell Service...
+  ok   No fictional upsells are suggested
+  ok   Production catalog starts empty
+  ok   2 adults x 180 = 360 USD
+  ok   (2 adults x 180) + 650 = 1010 USD
+  ok   Base price matches 3500
+  ok   Upsell total is 360
+  ok   Grand total is 3500 + 360 = 3860
+  ok   1 upsell returned in selected array
+All Upsell Service tests passed successfully!
+Empty catalog and unavailable booking tests passed
+Testing Supplier Voucher Service...
+  ok   calculateDateOffset accurately calculates service dates
+  ok   Generated 6 operations vouchers from quote
+  ok   Hotel consecutive nights merged into single 2-night voucher
+  ok   Nile cruise voucher generated with full board dining
+  ok   Chauffeur run sheet vouchers generated with flight coordinates
+  ok   Licensed Egyptologist tour assignment voucher generated
+  ok   Client-confirmed Luxor Hot Air Balloon upsell converted into operations voucher
+  ok   WhatsApp dispatch message formatted with bilingual operational details
+  ok   Driver WhatsApp dispatch contains flight, vehicle, and signboard text
+  ok   Printable voucher excludes official identifiers
+  ok   1-Click Batch Vouchers Pack compiled with multi-page printing rules
+All Supplier Voucher Service tests passed successfully!
+Testing Traveler Mobile Concierge & Tipping Guide Engine...
+  ok   At least 8 comprehensive Egyptian tourism service roles defined
+  ok   Egyptologist guide recommended tip is $30 USD
+  ok   Standard couple guide tip is $30 USD
+  ok   Standard couple guide tip is 1,500 EGP
+  ok   Group of 5+ travelers adjusts tipping upward fairly
+  ok   4-night Nile cruise calculated envelope is 4 x $15 = $60 USD
+  ok   Wallet prep recommends small 20 EGP notes for restrooms/incidentals
+  ok   Wallet prep recommends 50 EGP notes for porters/cafes
+  ok   Estimated day total calculated
+  ok   Mena house recognized with authentic Arabic destination name
+  ok   Mena house address references Pyramids / Haram
+  ok   Old Cataract recognized with Aswan Arabic name
+  ok   Day 2 details resolved
+  ok   Giza monument passes included
+  ok   Cultural etiquette tips included
+  ok   Driver details generated with vehicle plate
+  ok   Egyptologist guide contact generated
+All Traveler Concierge & Tipping Guide unit tests passed successfully!

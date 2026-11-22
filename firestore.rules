@@ -1,0 +1,7 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Deny legacy global collections until the tenant-aware repository is deployed.
+    match /{document=**} { allow read, write: if false; }
+  }
+}

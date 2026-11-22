@@ -1,0 +1,10 @@
+import React,{useState} from 'react';
+import type {Rate,Supplier} from '../../types';
+import {ExecutiveModal} from '../common/ExecutiveModal';
+import {importRateCsv} from '../../lib/rateCsv';
+export interface RateIngestionModalProps{isOpen:boolean;onClose:()=>void;suppliers:Supplier[];workspaceId:string;onImportRates:(rates:Rate[])=>void;}
+export const RateIngestionModal:React.FC<RateIngestionModalProps>=({isOpen,onClose,suppliers,workspaceId,onImportRates})=>{
+ const [rows,setRows]=useState<Rate[]>([]);const [error,setError]=useState('');const [busy,setBusy]=useState(false);
+ async function read(file?:File){setRows([]);setError('');if(!file)return;if(!file.name.toLowerCase().endsWith('.csv')||file.size>2_000_000){setError('ارفع ملف CSV بحجم لا يتجاوز 2 ميجابايت. Excel وPDF غير مدعومين بعد.');return;}setBusy(true);try{setRows(importRateCsv(await file.text(),suppliers,workspaceId));}catch(e){setError((e as Error).message);}finally{setBusy(false);}}
+ return <ExecutiveModal isOpen={isOpen} onClose={()=>{setRows([]);setError('');onClose();}} title="استيراد أسعار CSV"><section dir="rtl" className="p-5 space-y-4"><p>استخدم معرف مورد موجود. راجع الأسعار قبل الحفظ؛ لا تُستنتج قيم غير موجودة.</p><p>الأعمدة المطلوبة:</p><code dir="ltr" className="block break-all">supplierId,serviceName,city,occupancyBasis,currency,netCost,validityStart,validityEnd</code><label>ملف الأسعار<input type="file" accept=".csv,text/csv" disabled={busy} onChange={e=>void read(e.target.files?.[0])}/></label>{busy&&<p role="status">جارٍ القراءة…</p>}{error&&<p role="alert">{error}</p>}<div className="max-h-80 overflow-auto"><table className="w-full"><thead><tr><th>الخدمة</th><th>المورد</th><th>السعر</th></tr></thead><tbody>{rows.map(r=><tr key={r.id}><td>{r.serviceName}</td><td>{r.supplierName}</td><td>{r.netCost} {r.currency}</td></tr>)}</tbody></table></div><button disabled={!rows.length||busy} onClick={()=>{try{onImportRates(rows);setRows([]);onClose();}catch(e){setError((e as Error).message);}}}>حفظ {rows.length} سعر بعد المراجعة</button></section></ExecutiveModal>;
+};

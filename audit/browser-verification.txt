@@ -1,0 +1,1 @@
+Not completed: Playwright Chromium was not installed. Download failed with truncated archive. No visual or authenticated browser verification is claimed.
